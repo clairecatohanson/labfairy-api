@@ -1,0 +1,112 @@
+[
+  {
+    "model": "labfairyapi.equipment",
+    "pk": 1,
+    "fields": {
+      "name": "HPLC",
+      "description": "High-Performance Liquid Chromatography",
+      "location_id": 1,
+      "archived": false
+    }
+  },
+  {
+    "model": "labfairyapi.equipment",
+    "pk": 2,
+    "fields": {
+      "name": "FPLC",
+      "description": "Fast Protein Liquid Chromatography",
+      "location_id": 1,
+      "archived": false
+    }
+  },
+  {
+    "model": "labfairyapi.equipment",
+    "pk": 3,
+    "fields": {
+      "name": "NanoDrop",
+      "description": "Microvolume Spectrophotometer",
+      "location_id": 2,
+      "archived": false
+    }
+  },
+  {
+    "model": "labfairyapi.equipment",
+    "pk": 4,
+    "fields": {
+      "name": "Shaker, 37C",
+      "description": "Incubator with shaking capability for E. coli growth",
+      "location_id": 3,
+      "archived": false
+    }
+  },
+  {
+    "model": "labfairyapi.equipment",
+    "pk": 5,
+    "fields": {
+      "name": "-80C Freezer",
+      "description": "Ultra-low temperature freezer",
+      "location_id": 4,
+      "archived": false
+    }
+  },
+  {
+    "model": "labfairyapi.equipment",
+    "pk": 6,
+    "fields": {
+      "name": "-20C Freezer",
+      "description": "Low temperature freezer",
+      "location_id": 4,
+      "archived": false
+    }
+  },
+  {
+    "model": "labfairyapi.equipment",
+    "pk": 7,
+    "fields": {
+      "name": "Fluorescence Plate Reader",
+      "description": "Instrument for measuring fluorescence in microplates",
+      "location_id": 5,
+      "archived": false
+    }
+  },
+  {
+    "model": "labfairyapi.equipment",
+    "pk": 8,
+    "fields": {
+      "name": "4C Refrigerator",
+      "description": "Refrigerator for reagent storage",
+      "location_id": 5,
+      "archived": false
+    }
+  },
+  {
+    "model": "labfairyapi.equipment",
+    "pk": 9,
+    "fields": {
+      "name": "Shaker, 26C",
+      "description": "Incubator with shaking capability for insect cell growth",
+      "location_id": 3,
+      "archived": false
+    }
+  },
+  {
+    "model": "labfairyapi.equipment",
+    "pk": 10,
+    "fields": {
+      "name": "Ultracentrifuge",
+      "description": "High-speed centrifuge for separation of cell membranes",
+      "location_id": 4,
+      "archived": false
+    }
+  },
+  {
+    "model": "labfairyapi.equipment",
+    "pk": 11,
+    "fields": {
+      "name": "Table Top Centrifuge",
+      "description": "Medium-speed centrifuge with refrigeration",
+      "location_id": 3,
+      "archived": false
+    }
+  }
+]
