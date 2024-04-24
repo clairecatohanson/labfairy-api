@@ -5,6 +5,5 @@ rm -rf ./labfairyapi/migrations
 python3 manage.py migrate
 python3 manage.py makemigrations labfairyapi
 python3 manage.py migrate labfairyapi
-python3 manage.py loaddata users
-python3 manage.py loaddata tokens
+python3 manage.py loaddata building room location maintenance equipment equipmentmaintenance lab labequipment
 

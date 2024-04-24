@@ -5,7 +5,7 @@
     "fields": {
       "name": "HPLC",
       "description": "High-Performance Liquid Chromatography",
-      "location_id": 1,
+      "location_id": 7,
       "archived": false
     }
   },
@@ -15,7 +15,7 @@
     "fields": {
       "name": "FPLC",
       "description": "Fast Protein Liquid Chromatography",
-      "location_id": 1,
+      "location_id": 16,
       "archived": false
     }
   },
@@ -25,7 +25,7 @@
     "fields": {
       "name": "NanoDrop",
       "description": "Microvolume Spectrophotometer",
-      "location_id": 2,
+      "location_id": 8,
       "archived": false
     }
   },
@@ -35,7 +35,7 @@
     "fields": {
       "name": "Shaker, 37C",
       "description": "Incubator with shaking capability for E. coli growth",
-      "location_id": 3,
+      "location_id": 18,
       "archived": false
     }
   },
@@ -45,7 +45,7 @@
     "fields": {
       "name": "-80C Freezer",
       "description": "Ultra-low temperature freezer",
-      "location_id": 4,
+      "location_id": 6,
       "archived": false
     }
   },
@@ -55,7 +55,7 @@
     "fields": {
       "name": "-20C Freezer",
       "description": "Low temperature freezer",
-      "location_id": 4,
+      "location_id": 6,
       "archived": false
     }
   },
@@ -65,7 +65,7 @@
     "fields": {
       "name": "Fluorescence Plate Reader",
       "description": "Instrument for measuring fluorescence in microplates",
-      "location_id": 5,
+      "location_id": 10,
       "archived": false
     }
   },
@@ -85,7 +85,7 @@
     "fields": {
       "name": "Shaker, 26C",
       "description": "Incubator with shaking capability for insect cell growth",
-      "location_id": 3,
+      "location_id": 20,
       "archived": false
     }
   },
@@ -95,7 +95,7 @@
     "fields": {
       "name": "Ultracentrifuge",
       "description": "High-speed centrifuge for separation of cell membranes",
-      "location_id": 4,
+      "location_id": 15,
       "archived": false
     }
   },
@@ -105,7 +105,57 @@
     "fields": {
       "name": "Table Top Centrifuge",
       "description": "Medium-speed centrifuge with refrigeration",
-      "location_id": 3,
+      "location_id": 9,
+      "archived": false
+    }
+  },
+  {
+    "model": "labfairyapi.equipment",
+    "pk": 12,
+    "fields": {
+      "name": "Krios Cryo TEM",
+      "description": "Cryo Transmission Electron Microscope for low-resolution sample testing",
+      "location_id": 12,
+      "archived": false
+    }
+  },
+  {
+    "model": "labfairyapi.equipment",
+    "pk": 13,
+    "fields": {
+      "name": "Titan Krios Cryo TEM",
+      "description": "High-energy Cryo Transmission Electron Microscope for high-resolution data collection",
+      "location_id": 13,
+      "archived": false
+    }
+  },
+  {
+    "model": "labfairyapi.equipment",
+    "pk": 14,
+    "fields": {
+      "name": "Liquid Ethane Cryo-Plunge",
+      "description": "Liquid nitrogen-cooled liquid ethane vessel and robotic plunger for freezing EM grids for data collection",
+      "location_id": 11,
+      "archived": false
+    }
+  },
+  {
+    "model": "labfairyapi.equipment",
+    "pk": 15,
+    "fields": {
+      "name": "X-ray diffractometer",
+      "description": "Focused X-ray beam and rotating sample stand used to collect preliminary data on protein crystals and screen samples prior to full data collection at off-site synchrotron",
+      "location_id": 14,
+      "archived": false
+    }
+  },
+  {
+    "model": "labfairyapi.equipment",
+    "pk": 16,
+    "fields": {
+      "name": "Electron detector",
+      "description": "Reusable electron detection screen used in combination with X-ray diffractometer for preliminary data collection",
+      "location_id": 14,
       "archived": false
     }
   }

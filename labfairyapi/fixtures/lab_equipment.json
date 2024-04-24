@@ -1,0 +1,210 @@
+[
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 1,
+    "fields": {
+      "lab": 2,
+      "equipment": 12
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 2,
+    "fields": {
+      "lab": 2,
+      "equipment": 13
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 3,
+    "fields": {
+      "lab": 2,
+      "equipment": 14
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 4,
+    "fields": {
+      "lab": 2,
+      "equipment": 15
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 5,
+    "fields": {
+      "lab": 2,
+      "equipment": 16
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 6,
+    "fields": {
+      "lab": 2,
+      "equipment": 1
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 7,
+    "fields": {
+      "lab": 2,
+      "equipment": 3
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 8,
+    "fields": {
+      "lab": 2,
+      "equipment": 5
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 9,
+    "fields": {
+      "lab": 3,
+      "equipment": 1
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 10,
+    "fields": {
+      "lab": 3,
+      "equipment": 3
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 11,
+    "fields": {
+      "lab": 3,
+      "equipment": 5
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 12,
+    "fields": {
+      "lab": 3,
+      "equipment": 6
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 13,
+    "fields": {
+      "lab": 3,
+      "equipment": 8
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 14,
+    "fields": {
+      "lab": 3,
+      "equipment": 11
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 15,
+    "fields": {
+      "lab": 3,
+      "equipment": 7
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 16,
+    "fields": {
+      "lab": 3,
+      "equipment": 10
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 17,
+    "fields": {
+      "lab": 4,
+      "equipment": 2
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 18,
+    "fields": {
+      "lab": 4,
+      "equipment": 4
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 19,
+    "fields": {
+      "lab": 4,
+      "equipment": 9
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 20,
+    "fields": {
+      "lab": 4,
+      "equipment": 10
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 21,
+    "fields": {
+      "lab": 4,
+      "equipment": 1
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 22,
+    "fields": {
+      "lab": 4,
+      "equipment": 3
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 23,
+    "fields": {
+      "lab": 4,
+      "equipment": 5
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 24,
+    "fields": {
+      "lab": 4,
+      "equipment": 6
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 25,
+    "fields": {
+      "lab": 2,
+      "equipment": 10
+    }
+  },
+  {
+    "model": "labfairyapi.labequipment",
+    "pk": 26,
+    "fields": {
+      "lab": 4,
+      "equipment": 11
+    }
+  }
+]

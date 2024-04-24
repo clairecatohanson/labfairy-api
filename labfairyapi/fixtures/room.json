@@ -1,0 +1,82 @@
+[
+  {
+    "model": "labfairyapi.room",
+    "pk": 1,
+    "fields": {
+      "building": 1,
+      "number": 301
+    }
+  },
+  {
+    "model": "labfairyapi.room",
+    "pk": 2,
+    "fields": {
+      "building": 1,
+      "number": 302
+    }
+  },
+  {
+    "model": "labfairyapi.room",
+    "pk": 3,
+    "fields": {
+      "building": 1,
+      "number": 308
+    }
+  },
+  {
+    "model": "labfairyapi.room",
+    "pk": 4,
+    "fields": {
+      "building": 1,
+      "number": 312
+    }
+  },
+  {
+    "model": "labfairyapi.room",
+    "pk": 5,
+    "fields": {
+      "building": 1,
+      "number": 320
+    }
+  },
+  {
+    "model": "labfairyapi.room",
+    "pk": 6,
+    "fields": {
+      "building": 1,
+      "number": 1
+    }
+  },
+  {
+    "model": "labfairyapi.room",
+    "pk": 7,
+    "fields": {
+      "building": 1,
+      "number": 2
+    }
+  },
+  {
+    "model": "labfairyapi.room",
+    "pk": 8,
+    "fields": {
+      "building": 1,
+      "number": 408
+    }
+  },
+  {
+    "model": "labfairyapi.room",
+    "pk": 9,
+    "fields": {
+      "building": 1,
+      "number": 411
+    }
+  },
+  {
+    "model": "labfairyapi.room",
+    "pk": 10,
+    "fields": {
+      "building": 1,
+      "number": 412
+    }
+  }
+]

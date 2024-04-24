@@ -1,0 +1,65 @@
+[
+  {
+    "model": "labfairyapi.maintenance",
+    "pk": 1,
+    "fields": {
+      "name": "Preventative Maintenance",
+      "description": "Regular maintenance tasks to ensure proper equipment operation and longevity.",
+      "days_interval": 365
+    }
+  },
+  {
+    "model": "labfairyapi.maintenance",
+    "pk": 2,
+    "fields": {
+      "name": "Routine Cleaning",
+      "description": "Regular cleaning of equipment surfaces and components to maintain cleanliness and avoid contamination.",
+      "days_interval": 90
+    }
+  },
+  {
+    "model": "labfairyapi.maintenance",
+    "pk": 3,
+    "fields": {
+      "name": "Freezer Defrost",
+      "description": "Defrosting and cleaning of freezer units to ensure optimal performance and temperature control.",
+      "days_interval": 180
+    }
+  },
+  {
+    "model": "labfairyapi.maintenance",
+    "pk": 4,
+    "fields": {
+      "name": "Routine Calibration",
+      "description": "Regular calibration of equipment to ensure accurate measurements and results.",
+      "days_interval": 365
+    }
+  },
+  {
+    "model": "labfairyapi.maintenance",
+    "pk": 5,
+    "fields": {
+      "name": "Sample Standard Calibration",
+      "description": "Calibration of equipment using certified reference samples or standards.",
+      "days_interval": 365
+    }
+  },
+  {
+    "model": "labfairyapi.maintenance",
+    "pk": 6,
+    "fields": {
+      "name": "Disinfection",
+      "description": "Thorough disinfection of equipment surfaces and components to maintain sterile conditions.",
+      "days_interval": 90
+    }
+  },
+  {
+    "model": "labfairyapi.maintenance",
+    "pk": 7,
+    "fields": {
+      "name": "Balance Calibration",
+      "description": "Calibration of shakers and centrifuges to ensure equipment longevity.",
+      "days_interval": 365
+    }
+  }
+]

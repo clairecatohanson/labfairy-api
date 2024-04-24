@@ -3,13 +3,21 @@
     "model": "labfairyapi.lab",
     "pk": 1,
     "fields": {
+      "name": "Orphaned (No Lab)",
+      "description": "For researchers or equipment that are currently unassigned to a lab for any reason"
+    }
+  },
+  {
+    "model": "labfairyapi.lab",
+    "pk": 2,
+    "fields": {
       "name": "Structural Biology Lab",
       "description": "Protein structure determination using X-ray crystallography and electron microscopy"
     }
   },
   {
     "model": "labfairyapi.lab",
-    "pk": 2,
+    "pk": 3,
     "fields": {
       "name": "Protein Purification Lab",
       "description": "Protein expression using E. coli and insect cells. Protein purification using chromatography techniques"
@@ -17,7 +25,7 @@
   },
   {
     "model": "labfairyapi.lab",
-    "pk": 3,
+    "pk": 4,
     "fields": {
       "name": "Biochemistry Lab",
       "description": "Analysis of protein purity, binding affinity, and enzymatic activity using HPLC, ELISA, and fluorescence-based enzymatic assays"

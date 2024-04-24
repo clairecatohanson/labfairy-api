@@ -1,0 +1,10 @@
+[
+  {
+    "model": "labfairyapi.building",
+    "pk": 1,
+    "fields": {
+      "name": "Research Building 1",
+      "short_name": "RB1"
+    }
+  }
+]

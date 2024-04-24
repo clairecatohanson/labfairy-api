@@ -1,0 +1,162 @@
+[
+  {
+    "model": "labfairyapi.location",
+    "pk": 1,
+    "fields": {
+      "room": 1,
+      "name": "Sample Prep Bench 1"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 2,
+    "fields": {
+      "room": 1,
+      "name": "Sample Prep Bench 2"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 3,
+    "fields": {
+      "room": 2,
+      "name": "Sample Prep Bench 3"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 4,
+    "fields": {
+      "room": 2,
+      "name": "Sample Prep Bench 4"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 5,
+    "fields": {
+      "room": 3,
+      "name": "Refrigerator Bay"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 6,
+    "fields": {
+      "room": 3,
+      "name": "Freezer Bay"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 7,
+    "fields": {
+      "room": 4,
+      "name": "Equipment Bench 1"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 8,
+    "fields": {
+      "room": 4,
+      "name": "Equipment Bench 2"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 9,
+    "fields": {
+      "room": 5,
+      "name": "Equipment Bench 3"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 10,
+    "fields": {
+      "room": 5,
+      "name": "Equipment Bench 4"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 11,
+    "fields": {
+      "room": 6,
+      "name": "Cryo Sample Prep Bench"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 12,
+    "fields": {
+      "room": 6,
+      "name": "Electron Microscope Bay 1"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 13,
+    "fields": {
+      "room": 6,
+      "name": "Electron Microscope Bay 2"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 14,
+    "fields": {
+      "room": 7,
+      "name": "X-Ray Bay"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 15,
+    "fields": {
+      "room": 8,
+      "name": "Centrifuge Bay"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 16,
+    "fields": {
+      "room": 8,
+      "name": "Protein Equipment Bench"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 17,
+    "fields": {
+      "room": 9,
+      "name": "E coli Prep Bench"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 18,
+    "fields": {
+      "room": 9,
+      "name": "E coli Shaker Bay"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 19,
+    "fields": {
+      "room": 10,
+      "name": "Insect Cell Prep Bench"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 20,
+    "fields": {
+      "room": 10,
+      "name": "Insect Cell Shaker Bay"
+    }
+  }
+]
