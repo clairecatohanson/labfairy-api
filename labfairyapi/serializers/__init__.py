@@ -1,5 +1,5 @@
 from .equipment import (
-    EquipmentSerializer,
+    EquipmentCreatedSerializer,
     EquipmentListSerializer,
     EquipmentFullSerializer,
 )

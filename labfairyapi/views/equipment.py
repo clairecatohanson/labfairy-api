@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from labfairyapi.models import Location, Equipment, Researcher
 from labfairyapi.serializers import (
-    EquipmentSerializer,
+    EquipmentCreatedSerializer,
     EquipmentListSerializer,
     EquipmentFullSerializer,
 )
@@ -43,7 +43,7 @@ class EquipmentViewSet(ViewSet):
             return Response({"error": e.args[0]}, status=status.HTTP_400_BAD_REQUEST)
 
         # Serialize the new equipment instance
-        serializer = EquipmentSerializer(new_equipment, many=False)
+        serializer = EquipmentCreatedSerializer(new_equipment, many=False)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
@@ -80,8 +80,7 @@ class EquipmentViewSet(ViewSet):
 
         equipment.save()
 
-        serializer = EquipmentSerializer(equipment, many=False)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
 
     def list(self, request):
         # Retrieve all equipment instances
