@@ -1,0 +1,82 @@
+[
+  {
+    "model": "labfairyapi.researcher",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "lab": 3
+    }
+  },
+  {
+    "model": "labfairyapi.researcher",
+    "pk": 2,
+    "fields": {
+      "user": 3,
+      "lab": 4
+    }
+  },
+  {
+    "model": "labfairyapi.researcher",
+    "pk": 3,
+    "fields": {
+      "user": 4,
+      "lab": 2
+    }
+  },
+  {
+    "model": "labfairyapi.researcher",
+    "pk": 4,
+    "fields": {
+      "user": 5,
+      "lab": 3
+    }
+  },
+  {
+    "model": "labfairyapi.researcher",
+    "pk": 5,
+    "fields": {
+      "user": 6,
+      "lab": 4
+    }
+  },
+  {
+    "model": "labfairyapi.researcher",
+    "pk": 6,
+    "fields": {
+      "user": 7,
+      "lab": 2
+    }
+  },
+  {
+    "model": "labfairyapi.researcher",
+    "pk": 7,
+    "fields": {
+      "user": 8,
+      "lab": 3
+    }
+  },
+  {
+    "model": "labfairyapi.researcher",
+    "pk": 8,
+    "fields": {
+      "user": 9,
+      "lab": 4
+    }
+  },
+  {
+    "model": "labfairyapi.researcher",
+    "pk": 9,
+    "fields": {
+      "user": 10,
+      "lab": 2
+    }
+  },
+  {
+    "model": "labfairyapi.researcher",
+    "pk": 10,
+    "fields": {
+      "user": 11,
+      "lab": 3
+    }
+  }
+]
