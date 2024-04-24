@@ -1,1 +1,5 @@
-from .equipment import EquipmentSerializer
+from .equipment import (
+    EquipmentSerializer,
+    EquipmentListSerializer,
+    EquipmentFullSerializer,
+)

@@ -2,8 +2,12 @@ from django.core.exceptions import ValidationError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
-from labfairyapi.models import Location, Equipment
-from labfairyapi.serializers import EquipmentSerializer
+from labfairyapi.models import Location, Equipment, Researcher
+from labfairyapi.serializers import (
+    EquipmentSerializer,
+    EquipmentListSerializer,
+    EquipmentFullSerializer,
+)
 
 
 class EquipmentViewSet(ViewSet):
@@ -77,4 +81,45 @@ class EquipmentViewSet(ViewSet):
         equipment.save()
 
         serializer = EquipmentSerializer(equipment, many=False)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def list(self, request):
+        # Retrieve all equipment instances
+        all_equipment = Equipment.objects.all()
+
+        # Create a serializer instance with the queryset
+        serializer = EquipmentListSerializer(all_equipment, many=True)
+
+        # Return the serialized data
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def retrieve(self, request, pk=None):
+        # Get the requested equipment instance
+        try:
+            equipment = Equipment.objects.get(pk=pk)
+        except Equipment.DoesNotExist:
+            return Response(
+                {"error": "Equipment not found"}, status=status.HTTP_404_NOT_FOUND
+            )
+
+        # Check if the user is a superuser. If not, get the associated researcher.
+        user = request.auth.user
+        if not user.is_superuser:
+            researcher = Researcher.objects.get(user=user)
+
+            # Get the LabEquipment queryset for labs associated with this equipment instance
+            lab_equipment_set = equipment.equipment_labs.all()
+
+            # Get the lab_ids from the lab_equipment_set
+            lab_ids = [labequipment.lab.id for labequipment in lab_equipment_set]
+
+            # Determine whether the researcher is associated with one of the found lab_ids
+            if researcher.lab.id not in lab_ids:
+                return Response(
+                    {"error": "You are not authorized to perform this action."},
+                    status=status.HTTP_403_FORBIDDEN,
+                )
+
+        serializer = EquipmentFullSerializer(equipment, many=False)
+
         return Response(serializer.data, status=status.HTTP_200_OK)
