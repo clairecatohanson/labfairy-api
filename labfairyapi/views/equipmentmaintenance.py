@@ -109,3 +109,18 @@ class EquipmentMaintenanceViewSet(ViewSet):
             return Response({"error": e.args[0]}, status=status.HTTP_400_BAD_REQUEST)
 
         return Response({}, status=status.HTTP_204_NO_CONTENT)
+
+    def delete(self, request, pk=None):
+        # Check that user is_staff
+        user = request.auth.user
+        if not user.is_superuser:
+            return Response(
+                {"error": "You are not authorized to perform this action."},
+                status=status.HTTP_403_FORBIDDEN,
+            )
+
+        # Try to find the requested instance
+        maintenance_ticket = get_object_or_404(EquipmentMaintenance, pk=pk)
+
+        maintenance_ticket.delete()
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
