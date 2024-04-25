@@ -20,4 +20,11 @@ class EquipmentMaintenanceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = EquipmentMaintenance
-        fields = ("id", "equipment", "maintenance", "date_needed", "date_scheduled")
+        fields = (
+            "id",
+            "equipment",
+            "maintenance",
+            "date_needed",
+            "date_scheduled",
+            "date_completed",
+        )

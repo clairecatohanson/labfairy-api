@@ -4,7 +4,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
 from django.utils import timezone
-from labfairyapi.models import Equipment, Maintenance, EquipmentMaintenance
+from labfairyapi.models import Equipment, Maintenance, EquipmentMaintenance, Researcher
 from labfairyapi.serializers import EquipmentMaintenanceSerializer
 
 
@@ -124,3 +124,26 @@ class EquipmentMaintenanceViewSet(ViewSet):
 
         maintenance_ticket.delete()
         return Response({}, status=status.HTTP_204_NO_CONTENT)
+
+    def list(self, request):
+        # Check if the user is a superuser. If not, get the associated researcher.
+        user = request.auth.user
+        if user.is_superuser:
+            maintenance_tickets = EquipmentMaintenance.objects.all()
+        else:
+            researcher = Researcher.objects.get(user=user)
+
+            # Get researcher's lab_ids
+            lab_equipment_set = researcher.lab.lab_equipment.all()
+            equipment_ids = [
+                lab_equipment.equipment.id for lab_equipment in lab_equipment_set
+            ]
+
+            # Filter EquipmentMaintenance set for equipment that the lab has access to
+            maintenance_tickets = EquipmentMaintenance.objects.filter(
+                equipment__pk__in=equipment_ids
+            )
+
+        serializer = EquipmentMaintenanceSerializer(maintenance_tickets, many=True)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
