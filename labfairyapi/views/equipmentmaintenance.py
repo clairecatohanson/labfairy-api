@@ -3,13 +3,14 @@ from django.core.exceptions import ValidationError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
+from django.utils import timezone
 from labfairyapi.models import Equipment, Maintenance, EquipmentMaintenance
 from labfairyapi.serializers import EquipmentMaintenanceSerializer
 
 
 class EquipmentMaintenanceViewSet(ViewSet):
     def create(self, request):
-        current_user = request.auth.user
+        user = request.auth.user
 
         # Check for required keys in the request body
         equipment_id = request.data.get("equipment_id")
@@ -32,7 +33,7 @@ class EquipmentMaintenanceViewSet(ViewSet):
             equipment=equipment,
             maintenance=maintenance_type,
             date_needed=date_needed,
-            user=current_user,
+            user=user,
         )
 
         # Check for optional keys in the request body
@@ -41,7 +42,7 @@ class EquipmentMaintenanceViewSet(ViewSet):
 
         if date_scheduled is not None:
             # Only allow superuser to complete scheduling
-            if current_user.is_superuser:
+            if user.is_superuser:
                 new_maintenance_ticket.date_scheduled = date_scheduled
 
         if notes is not None:
@@ -58,3 +59,53 @@ class EquipmentMaintenanceViewSet(ViewSet):
         serializer = EquipmentMaintenanceSerializer(new_maintenance_ticket, many=False)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    def update(self, request, pk=None):
+        # Check that the user is a superuser
+        user = request.auth.user
+        if not user.is_superuser:
+            return Response(
+                {"error": "You are not authorized to perform this action."},
+                status=status.HTTP_403_FORBIDDEN,
+            )
+
+        # Get the EquipmentMaintenance instance
+        maintenance_ticket = get_object_or_404(EquipmentMaintenance, pk=pk)
+
+        # Get optional keys from the request body
+        date_needed = request.data.get("date_needed")
+        date_scheduled = request.data.get("date_scheduled")
+        completed = request.data.get("completed")
+        date_completed = request.data.get("date_completed")
+
+        if (
+            not date_needed
+            and not date_scheduled
+            and not completed
+            and not date_completed
+        ):
+            return Response(
+                {
+                    "error": "Missing required fields. Please include at least one of the following: date_needed, date_scheduled, completed, date_completed."
+                },
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        if date_needed is not None:
+            maintenance_ticket.date_needed = date_needed
+
+        if date_scheduled is not None:
+            maintenance_ticket.date_scheduled = date_scheduled
+
+        if completed == True:
+            maintenance_ticket.date_completed = timezone.now().date()
+
+        if date_completed is not None:
+            maintenance_ticket.date_completed = date_completed
+        try:
+            maintenance_ticket.full_clean()
+            maintenance_ticket.save()
+        except ValidationError as e:
+            return Response({"error": e.args[0]}, status=status.HTTP_400_BAD_REQUEST)
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
