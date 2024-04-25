@@ -1,7 +1,9 @@
+from django.shortcuts import get_object_or_404
 from django.core.exceptions import ValidationError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.permissions import IsAdminUser
 from labfairyapi.models import Location, Equipment, Researcher
 from labfairyapi.serializers import (
     EquipmentCreatedSerializer,
@@ -80,6 +82,21 @@ class EquipmentViewSet(ViewSet):
 
         equipment.save()
 
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
+
+    def delete(self, request, pk=None):
+        # Check that user is_staff
+        user = request.auth.user
+        if not user.is_superuser:
+            return Response(
+                {"error": "You are not authorized to perform this action."},
+                status=status.HTTP_403_FORBIDDEN,
+            )
+
+        # Try to find the requested instance
+        equipment = get_object_or_404(Equipment, pk=pk)
+
+        equipment.delete()
         return Response({}, status=status.HTTP_204_NO_CONTENT)
 
     def list(self, request):
