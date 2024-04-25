@@ -5,7 +5,10 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.utils import timezone
 from labfairyapi.models import Equipment, Maintenance, EquipmentMaintenance, Researcher
-from labfairyapi.serializers import EquipmentMaintenanceSerializer
+from labfairyapi.serializers import (
+    EquipmentMaintenanceSerializer,
+    EquipmentMaintenanceDetailsSerializer,
+)
 
 
 class EquipmentMaintenanceViewSet(ViewSet):
@@ -133,7 +136,7 @@ class EquipmentMaintenanceViewSet(ViewSet):
         else:
             researcher = Researcher.objects.get(user=user)
 
-            # Get researcher's lab_ids
+            # Get researcher's equipment_ids
             lab_equipment_set = researcher.lab.lab_equipment.all()
             equipment_ids = [
                 lab_equipment.equipment.id for lab_equipment in lab_equipment_set
@@ -146,4 +149,29 @@ class EquipmentMaintenanceViewSet(ViewSet):
 
         serializer = EquipmentMaintenanceSerializer(maintenance_tickets, many=True)
 
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def retrieve(self, request, pk=None):
+        maintenance_ticket = get_object_or_404(EquipmentMaintenance, pk=pk)
+
+        # Check if the user is a superuser. If not, get the associated researcher.
+        user = request.auth.user
+        if not user.is_superuser:
+            researcher = Researcher.objects.get(user=user)
+
+            # Get researcher's equipment_ids
+            lab_equipment_set = researcher.lab.lab_equipment.all()
+            equipment_ids = [
+                lab_equipment.equipment.id for lab_equipment in lab_equipment_set
+            ]
+
+            if maintenance_ticket.equipment.id not in equipment_ids:
+                return Response(
+                    {"error": "You are not authorized to perform this action."},
+                    status=status.HTTP_403_FORBIDDEN,
+                )
+
+        serializer = EquipmentMaintenanceDetailsSerializer(
+            maintenance_ticket, many=False
+        )
         return Response(serializer.data, status=status.HTTP_200_OK)
