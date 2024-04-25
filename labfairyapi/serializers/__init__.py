@@ -4,4 +4,7 @@ from .equipment import (
     EquipmentFullSerializer,
 )
 from .labequipment import LabEquipmentSerializer
-from .equipmentmaintenance import EquipmentMaintenanceSerializer
+from .equipmentmaintenance import (
+    EquipmentMaintenanceSerializer,
+    EquipmentMaintenanceDetailsSerializer,
+)
