@@ -11,3 +11,4 @@ from .equipmentmaintenance import (
 from .building import BuildingSerializer
 from .room import RoomSerializer
 from .location import LocationSerializer
+from .lab import LabSerializer
