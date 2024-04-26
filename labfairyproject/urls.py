@@ -9,4 +9,9 @@ router.register(r"equipment", EquipmentViewSet, "equipment")
 router.register(r"labequipment", LabEquipmentViewSet, "labequipment")
 router.register(r"maintenance", EquipmentMaintenanceViewSet, "equipmentmaintenance")
 
-urlpatterns = [path("", include(router.urls)), path("admin/", admin.site.urls)]
+urlpatterns = [
+    path("", include(router.urls)),
+    path("admin/", admin.site.urls),
+    path("register", register_user),
+    path("login", login_user),
+]
