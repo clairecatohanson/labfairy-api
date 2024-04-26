@@ -8,6 +8,9 @@ router = routers.DefaultRouter(trailing_slash=False)
 router.register(r"equipment", EquipmentViewSet, "equipment")
 router.register(r"labequipment", LabEquipmentViewSet, "labequipment")
 router.register(r"maintenance", EquipmentMaintenanceViewSet, "equipmentmaintenance")
+router.register(r"buildings", BuildingViewSet, "buildings")
+router.register(r"rooms", RoomViewSet, "rooms")
+router.register(r"locations", LocationViewSet, "locations")
 
 urlpatterns = [
     path("", include(router.urls)),

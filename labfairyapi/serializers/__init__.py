@@ -8,3 +8,6 @@ from .equipmentmaintenance import (
     EquipmentMaintenanceSerializer,
     EquipmentMaintenanceDetailsSerializer,
 )
+from .building import BuildingSerializer
+from .room import RoomSerializer
+from .location import LocationSerializer
