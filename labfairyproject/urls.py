@@ -11,6 +11,7 @@ router.register(r"maintenance", EquipmentMaintenanceViewSet, "equipmentmaintenan
 router.register(r"buildings", BuildingViewSet, "buildings")
 router.register(r"rooms", RoomViewSet, "rooms")
 router.register(r"locations", LocationViewSet, "locations")
+router.register(r"labs", LabViewSet, "labs")
 
 urlpatterns = [
     path("", include(router.urls)),
