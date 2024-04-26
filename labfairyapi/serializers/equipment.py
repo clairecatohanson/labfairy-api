@@ -34,7 +34,7 @@ class RoomSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Room
-        fields = ("number", "building")
+        fields = ("name", "building")
 
 
 class LocationSerializer(serializers.ModelSerializer):
