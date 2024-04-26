@@ -4,7 +4,13 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
 from django.utils import timezone
-from labfairyapi.models import Equipment, Maintenance, EquipmentMaintenance, Researcher
+from labfairyapi.models import (
+    Equipment,
+    Maintenance,
+    EquipmentMaintenance,
+    Researcher,
+    Lab,
+)
 from labfairyapi.serializers import (
     EquipmentMaintenanceSerializer,
     EquipmentMaintenanceDetailsSerializer,
@@ -133,19 +139,65 @@ class EquipmentMaintenanceViewSet(ViewSet):
         user = request.auth.user
         if user.is_superuser:
             maintenance_tickets = EquipmentMaintenance.objects.all()
+
         else:
             researcher = Researcher.objects.get(user=user)
 
-            # Get researcher's equipment_ids
-            lab_equipment_set = researcher.lab.lab_equipment.all()
-            equipment_ids = [
-                lab_equipment.equipment.id for lab_equipment in lab_equipment_set
-            ]
-
             # Filter EquipmentMaintenance set for equipment that the lab has access to
             maintenance_tickets = EquipmentMaintenance.objects.filter(
-                equipment__pk__in=equipment_ids
+                equipment__equipment_labs__lab__researchers=researcher
             )
+
+        # Get optional query params and filter maintenance_tickets
+        equipment_id = request.query_params.get("equipment_id")
+        maintenance_type_id = request.query_params.get("maintenance_type_id")
+        lab_id = request.query_params.get("lab_id")
+        progress = request.query_params.get("progress")
+        limit = request.query_params.get("limit")
+
+        # Filter by equipment
+        if equipment_id is not None:
+            maintenance_tickets = maintenance_tickets.filter(equipment__id=equipment_id)
+
+        # Filter by maintenance type
+        if maintenance_type_id is not None:
+            maintenance_tickets = maintenance_tickets.filter(
+                maintenance__id=maintenance_type_id
+            )
+
+        # Filter by lab who has access to the equipment
+        if lab_id is not None:
+            lab = get_object_or_404(Lab, pk=lab_id)
+            maintenance_tickets = maintenance_tickets.filter(
+                equipment__equipment_labs__lab=lab
+            )
+
+        # Filter by progress (requested, scheduled, or completed)
+        if progress is not None:
+            if progress == "requested":
+                maintenance_tickets = maintenance_tickets.filter(
+                    date_scheduled__isnull=True
+                )
+            if progress == "scheduled":
+                maintenance_tickets = maintenance_tickets.filter(
+                    date_scheduled__isnull=False, date_completed__isnull=True
+                )
+            if progress == "completed":
+                maintenance_tickets = maintenance_tickets.filter(
+                    date_scheduled__isnull=False, date_completed__isnull=False
+                )
+
+        # Limit the number of maintenance tickets in the response
+        if limit is not None:
+            limit = int(limit)
+            if progress == "requested":
+                maintenance_tickets = maintenance_tickets.order_by("-date_needed")[
+                    :limit
+                ]
+            if progress == "scheduled":
+                maintenance_tickets = maintenance_tickets.order_by("-date_scheduled")[
+                    :limit
+                ]
 
         serializer = EquipmentMaintenanceSerializer(maintenance_tickets, many=True)
 
