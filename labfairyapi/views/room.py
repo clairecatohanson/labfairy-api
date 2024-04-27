@@ -7,8 +7,14 @@ from labfairyapi.serializers import RoomSerializer
 
 class RoomViewSet(ViewSet):
     def list(self, request):
-        all_rooms = Room.objects.all()
+        # Get all rooms
+        rooms = Room.objects.all()
 
-        serializer = RoomSerializer(all_rooms, many=True)
+        # Get optional query_params and filter
+        building_id = request.query_params.get("building")
+        if building_id is not None:
+            rooms = rooms.filter(building__pk=building_id)
+
+        serializer = RoomSerializer(rooms, many=True)
 
         return Response(serializer.data, status=status.HTTP_200_OK)

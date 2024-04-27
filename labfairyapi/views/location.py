@@ -7,8 +7,14 @@ from labfairyapi.serializers import LocationSerializer
 
 class LocationViewSet(ViewSet):
     def list(self, request):
-        all_locations = Location.objects.all()
+        # Get all locations
+        locations = Location.objects.all()
 
-        serializer = LocationSerializer(all_locations, many=True)
+        # Get optional query_params and filter
+        room_id = request.query_params.get("room")
+        if room_id is not None:
+            locations = locations.filter(room__pk=room_id)
+
+        serializer = LocationSerializer(locations, many=True)
 
         return Response(serializer.data, status=status.HTTP_200_OK)
