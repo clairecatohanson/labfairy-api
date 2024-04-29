@@ -100,11 +100,21 @@ class EquipmentViewSet(ViewSet):
         return Response({}, status=status.HTTP_204_NO_CONTENT)
 
     def list(self, request):
-        # Retrieve all equipment instances
-        all_equipment = Equipment.objects.all()
+        # Check for query params
+        user = request.auth.user
+        if user.is_superuser:
+            equipment = Equipment.objects.all()
+        else:
+            researcher = Researcher.objects.get(user=user)
+            restricted = request.query_params.get("restricted")
+            if restricted is not None and restricted == "access":
+
+                equipment = Equipment.objects.filter(equipment_labs__lab=researcher.lab)
+            else:
+                equipment = Equipment.objects.all()
 
         # Create a serializer instance with the queryset
-        serializer = EquipmentListSerializer(all_equipment, many=True)
+        serializer = EquipmentListSerializer(equipment, many=True)
 
         # Return the serialized data
         return Response(serializer.data, status=status.HTTP_200_OK)

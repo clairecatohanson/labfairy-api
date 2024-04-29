@@ -6,3 +6,4 @@ from .building import BuildingViewSet
 from .room import RoomViewSet
 from .location import LocationViewSet
 from .lab import LabViewSet
+from .maintenance import MaintenanceViewSet
