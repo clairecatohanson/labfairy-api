@@ -70,6 +70,7 @@ class EquipmentFullSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "name",
+            "description",
             "location",
             "equipment_labs",
             "maintenance_tickets",
