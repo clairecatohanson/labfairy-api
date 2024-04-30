@@ -67,9 +67,16 @@ class MaintenanceFullSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ("id", "first_name", "last_name", "username")
+
+
 class EquipmentMaintenanceSerializer(serializers.ModelSerializer):
     equipment = EquipmentSerializer(many=False)
     maintenance = MaintenanceSerializer(many=False)
+    user = UserSerializer(many=False)
 
     class Meta:
         model = EquipmentMaintenance
