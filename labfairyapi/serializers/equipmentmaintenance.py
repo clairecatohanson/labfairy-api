@@ -80,6 +80,7 @@ class EquipmentMaintenanceSerializer(serializers.ModelSerializer):
             "date_needed",
             "date_scheduled",
             "date_completed",
+            "user",
         )
 
 
