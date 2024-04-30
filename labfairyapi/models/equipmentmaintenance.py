@@ -13,11 +13,7 @@ class EquipmentMaintenance(models.Model):
         "Maintenance", on_delete=models.CASCADE, related_name="tickets"
     )
     date_request_completed = models.DateTimeField(auto_now_add=True)
-    date_needed = models.DateField(
-        validators=[
-            MinValueValidator(timezone.now().date() + datetime.timedelta(days=1))
-        ]
-    )
+    date_needed = models.DateField()
     date_scheduled = models.DateField(
         null=True,
         blank=True,
