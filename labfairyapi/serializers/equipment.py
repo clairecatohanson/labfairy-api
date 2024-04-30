@@ -53,10 +53,21 @@ class EquipmentListSerializer(serializers.ModelSerializer):
 
     equipment_labs = EquipmentLabSerializer(many=True)
     location = LocationSerializer(many=False)
+    has_access = serializers.SerializerMethodField()
+
+    def get_has_access(self, obj):
+        request = self.context["request"]
+        user = request.auth.user
+
+        if user.is_superuser:
+            return True
+        if obj.equipment_labs.filter(lab=user.researcher.lab).exists():
+            return True
+        return False
 
     class Meta:
         model = Equipment
-        fields = ("id", "name", "location", "equipment_labs", "archived")
+        fields = ("id", "name", "location", "equipment_labs", "archived", "has_access")
 
 
 class EquipmentFullSerializer(serializers.ModelSerializer):

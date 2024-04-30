@@ -3,7 +3,9 @@ from django.contrib.auth.models import User
 
 
 class Researcher(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE, related_name="researcher"
+    )
     lab = models.ForeignKey(
         "Lab", on_delete=models.SET_DEFAULT, default=1, related_name="researchers"
     )

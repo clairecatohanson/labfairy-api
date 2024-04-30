@@ -114,7 +114,9 @@ class EquipmentViewSet(ViewSet):
                 equipment = Equipment.objects.all()
 
         # Create a serializer instance with the queryset
-        serializer = EquipmentListSerializer(equipment, many=True)
+        serializer = EquipmentListSerializer(
+            equipment, context={"request": request}, many=True
+        )
 
         # Return the serialized data
         return Response(serializer.data, status=status.HTTP_200_OK)
