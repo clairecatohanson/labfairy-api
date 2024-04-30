@@ -85,12 +85,14 @@ class EquipmentMaintenanceViewSet(ViewSet):
         date_needed = request.data.get("date_needed")
         date_scheduled = request.data.get("date_scheduled")
         completed = request.data.get("completed")
+        cancelled = request.data.get("cancelled")
         date_completed = request.data.get("date_completed")
 
         if (
             not date_needed
             and not date_scheduled
             and not completed
+            and not cancelled
             and not date_completed
         ):
             return Response(
@@ -108,6 +110,9 @@ class EquipmentMaintenanceViewSet(ViewSet):
 
         if completed == True:
             maintenance_ticket.date_completed = timezone.now().date()
+
+        if cancelled == True:
+            maintenance_ticket.date_scheduled = None
 
         if date_completed is not None:
             maintenance_ticket.date_completed = date_completed
