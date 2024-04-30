@@ -13,3 +13,4 @@ from .room import RoomSerializer
 from .location import LocationSerializer
 from .lab import LabSerializer
 from .maintenance import MaintenanceSerializer
+from .user import SuperUserSerializer, UserResearcherSerializer
