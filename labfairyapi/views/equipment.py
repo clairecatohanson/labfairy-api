@@ -79,6 +79,8 @@ class EquipmentViewSet(ViewSet):
                     {"error": "Location not found"},
                     status=status.HTTP_400_BAD_REQUEST,
                 )
+        if "archived" in request.data:
+            equipment.archived = request.data["archived"]
 
         equipment.save()
 
