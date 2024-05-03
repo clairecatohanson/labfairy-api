@@ -5,13 +5,12 @@
     "fields": {
       "equipment": 7,
       "maintenance": 1,
-      "date_scheduling_completed": "2023-12-15T10:30:00Z",
+      "date_request_completed": "2023-12-15T10:30:00Z",
+      "date_needed": "2024-01-08",
       "date_scheduled": "2024-01-10",
-      "date_completed": "2024-01-12T14:00:00Z",
-      "next_date_needed": "2025-01-12",
-      "next_date_scheduled": false,
-      "is_cancelled": false,
-      "notes": null
+      "date_completed": "2024-01-10T14:00:00Z",
+      "notes": null,
+      "user": 1
     }
   },
   {
@@ -20,13 +19,12 @@
     "fields": {
       "equipment": 12,
       "maintenance": 6,
-      "date_scheduling_completed": "2023-09-20T15:45:00Z",
+      "date_request_completed": "2023-09-20T15:45:00Z",
+      "date_needed": "2023-12-02",
       "date_scheduled": "2023-12-01",
-      "date_completed": "2023-12-03T09:30:00Z",
-      "next_date_needed": "2024-03-02",
-      "next_date_scheduled": false,
-      "is_cancelled": false,
-      "notes": null
+      "date_completed": "2023-12-01T09:30:00Z",
+      "notes": null,
+      "user": 1
     }
   },
   {
@@ -35,13 +33,12 @@
     "fields": {
       "equipment": 4,
       "maintenance": 7,
-      "date_scheduling_completed": "2024-02-01T08:15:00Z",
-      "date_scheduled": "2024-06-15",
+      "date_request_completed": "2024-02-01T08:15:00Z",
+      "date_needed": "2024-06-15",
+      "date_scheduled": null,
       "date_completed": null,
-      "next_date_needed": null,
-      "next_date_scheduled": false,
-      "is_cancelled": false,
-      "notes": null
+      "notes": null,
+      "user": 1
     }
   }
 ]

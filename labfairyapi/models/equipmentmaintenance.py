@@ -1,4 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator
+from django.utils import timezone
+import datetime
 
 
 class EquipmentMaintenance(models.Model):
@@ -8,13 +12,18 @@ class EquipmentMaintenance(models.Model):
     maintenance = models.ForeignKey(
         "Maintenance", on_delete=models.CASCADE, related_name="tickets"
     )
-    date_scheduling_completed = models.DateTimeField(auto_now_add=True)
-    date_scheduled = models.DateField()
-    date_completed = models.DateTimeField(null=True)
-    next_date_needed = models.DateField(null=True)
-    next_date_scheduled = models.BooleanField(default=False)
-    is_cancelled = models.BooleanField(default=False)
-    notes = models.TextField(null=True)
+    date_request_completed = models.DateTimeField(auto_now_add=True)
+    date_needed = models.DateField()
+    date_scheduled = models.DateField(
+        null=True,
+        blank=True,
+        validators=[
+            MinValueValidator(timezone.now().date() + datetime.timedelta(days=1))
+        ],
+    )
+    date_completed = models.DateTimeField(null=True, blank=True)
+    notes = models.TextField(null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
 
     def __str__(self):
         return f"{self.maintenance.name} ({self.equipment.name})"
