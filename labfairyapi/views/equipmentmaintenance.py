@@ -49,7 +49,7 @@ class EquipmentMaintenanceViewSet(ViewSet):
         date_scheduled = request.data.get("date_scheduled")
         notes = request.data.get("notes")
 
-        if date_scheduled is not None:
+        if date_scheduled is not None and date_scheduled != "":
             # Only allow superuser to complete scheduling
             if user.is_superuser:
                 new_maintenance_ticket.date_scheduled = date_scheduled
