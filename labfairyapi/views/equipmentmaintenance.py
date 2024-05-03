@@ -82,11 +82,11 @@ class EquipmentMaintenanceViewSet(ViewSet):
         maintenance_ticket = get_object_or_404(EquipmentMaintenance, pk=pk)
 
         # Get optional keys from the request body
-        date_needed = request.data.get("date_needed")
-        date_scheduled = request.data.get("date_scheduled")
-        completed = request.data.get("completed")
-        cancelled = request.data.get("cancelled")
-        date_completed = request.data.get("date_completed")
+        date_needed = request.data.get("date_needed", None)
+        date_scheduled = request.data.get("date_scheduled", None)
+        completed = request.data.get("completed", None)
+        cancelled = request.data.get("cancelled", None)
+        date_completed = request.data.get("date_completed", None)
 
         if (
             not date_needed
@@ -102,10 +102,10 @@ class EquipmentMaintenanceViewSet(ViewSet):
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
-        if date_needed is not None:
+        if date_needed is not None and date_needed != "":
             maintenance_ticket.date_needed = date_needed
 
-        if date_scheduled is not None:
+        if date_scheduled is not None and date_scheduled != "":
             maintenance_ticket.date_scheduled = date_scheduled
 
         if completed == True:
@@ -114,7 +114,7 @@ class EquipmentMaintenanceViewSet(ViewSet):
         if cancelled == True:
             maintenance_ticket.date_scheduled = None
 
-        if date_completed is not None:
+        if date_completed is not None and date_completed != "":
             maintenance_ticket.date_completed = date_completed
         try:
             maintenance_ticket.full_clean()
