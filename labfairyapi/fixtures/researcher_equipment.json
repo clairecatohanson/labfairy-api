@@ -14,7 +14,7 @@
     "pk": 2,
     "fields": {
       "researcher": 3,
-      "equipment": 5,
+      "equipment": 4,
       "training_date": "2024-02-22",
       "approved": false
     }

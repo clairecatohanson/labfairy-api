@@ -196,11 +196,11 @@ class EquipmentMaintenanceViewSet(ViewSet):
         if limit is not None:
             limit = int(limit)
             if progress == "requested":
-                maintenance_tickets = maintenance_tickets.order_by("-date_needed")[
+                maintenance_tickets = maintenance_tickets.order_by("date_needed")[
                     :limit
                 ]
             if progress == "scheduled":
-                maintenance_tickets = maintenance_tickets.order_by("-date_scheduled")[
+                maintenance_tickets = maintenance_tickets.order_by("date_scheduled")[
                     :limit
                 ]
 

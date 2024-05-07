@@ -77,7 +77,7 @@ class ResearcherEquipmentViewSet(ViewSet):
                 requests = requests.filter(approved=True)
 
         # Order by training date
-        requests = requests.order_by("-training_date")
+        requests = requests.order_by("training_date")
 
         # Serialize the ResearcherEquipment
         serializer = ResearcherEquipmentSerializer(requests, many=True)
