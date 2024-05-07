@@ -193,6 +193,12 @@ class EquipmentMaintenanceViewSet(ViewSet):
                 maintenance_tickets = maintenance_tickets.filter(
                     date_scheduled__isnull=False, date_completed__isnull=False
                 )
+            if progress == "active":
+                maintenance_tickets = maintenance_tickets.filter(
+                    date_completed__isnull=True
+                )
+
+        maintenance_tickets = maintenance_tickets.order_by("date_needed")
 
         # Limit the number of maintenance tickets in the response
         if limit is not None:

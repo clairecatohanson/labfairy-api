@@ -115,6 +115,26 @@ class EquipmentViewSet(ViewSet):
             else:
                 equipment = Equipment.objects.all()
 
+        # Get optional query params
+        availability = request.query_params.get("status")
+        lab_id = request.query_params.get("lab_id")
+        search_name = request.query_params.get("name")
+
+        # Filter by status
+        if availability is not None:
+            if availability == "archived":
+                equipment = equipment.filter(archived=True)
+            if availability == "active":
+                equipment = equipment.filter(archived=False)
+
+        # Filter by lab
+        if lab_id is not None:
+            equipment = equipment.filter(equipment_labs__lab__id=lab_id)
+
+        # Filter by name
+        if search_name is not None:
+            equipment = equipment.filter(name__icontains=search_name)
+
         # Create a serializer instance with the queryset
         serializer = EquipmentListSerializer(
             equipment, context={"request": request}, many=True
