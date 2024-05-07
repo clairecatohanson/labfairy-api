@@ -122,7 +122,9 @@ class EquipmentMaintenanceViewSet(ViewSet):
         except ValidationError as e:
             return Response({"error": e.args[0]}, status=status.HTTP_400_BAD_REQUEST)
 
-        return Response({}, status=status.HTTP_204_NO_CONTENT)
+        serializer = EquipmentMaintenanceSerializer(maintenance_ticket, many=False)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def delete(self, request, pk=None):
         # Check that user is_staff
