@@ -9,13 +9,13 @@ class ConsumableInventory(models.Model):
         "Inventory",
         on_delete=models.SET_NULL,
         null=True,
-        related_name="consumable_inventories",
+        related_name="inventory_consumables",
     )
     location = models.ForeignKey(
         "Location",
         on_delete=models.SET_NULL,
         null=True,
-        related_name="consumable_inventories",
+        related_name="inventory_consumables",
     )
     depleted = models.BooleanField(default=False)
 
