@@ -158,5 +158,29 @@
       "room": 10,
       "name": "Insect Cell Shaker Bay"
     }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 21,
+    "fields": {
+      "room": 11,
+      "name": "Cryo Storage Bay"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 22,
+    "fields": {
+      "room": 12,
+      "name": "Wet Lab Storage Room"
+    }
+  },
+  {
+    "model": "labfairyapi.location",
+    "pk": 20,
+    "fields": {
+      "room": 13,
+      "name": "Glassware Cabinet"
+    }
   }
 ]

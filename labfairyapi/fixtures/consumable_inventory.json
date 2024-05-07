@@ -1,0 +1,1062 @@
+[
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 1,
+    "fields": {
+      "consumable": 18,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 2,
+    "fields": {
+      "consumable": 47,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 3,
+    "fields": {
+      "consumable": 76,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 4,
+    "fields": {
+      "consumable": 5,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 5,
+    "fields": {
+      "consumable": 22,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 6,
+    "fields": {
+      "consumable": 89,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 7,
+    "fields": {
+      "consumable": 31,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 8,
+    "fields": {
+      "consumable": 60,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 9,
+    "fields": {
+      "consumable": 14,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 10,
+    "fields": {
+      "consumable": 42,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 11,
+    "fields": {
+      "consumable": 72,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 12,
+    "fields": {
+      "consumable": 3,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 13,
+    "fields": {
+      "consumable": 57,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 14,
+    "fields": {
+      "consumable": 25,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 15,
+    "fields": {
+      "consumable": 83,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 16,
+    "fields": {
+      "consumable": 9,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 17,
+    "fields": {
+      "consumable": 38,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 18,
+    "fields": {
+      "consumable": 66,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 19,
+    "fields": {
+      "consumable": 17,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 20,
+    "fields": {
+      "consumable": 49,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 21,
+    "fields": {
+      "consumable": 78,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 22,
+    "fields": {
+      "consumable": 24,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 23,
+    "fields": {
+      "consumable": 55,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 24,
+    "fields": {
+      "consumable": 87,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 25,
+    "fields": {
+      "consumable": 32,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 26,
+    "fields": {
+      "consumable": 61,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 27,
+    "fields": {
+      "consumable": 15,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 28,
+    "fields": {
+      "consumable": 43,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 29,
+    "fields": {
+      "consumable": 73,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 30,
+    "fields": {
+      "consumable": 4,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 31,
+    "fields": {
+      "consumable": 58,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 32,
+    "fields": {
+      "consumable": 26,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 33,
+    "fields": {
+      "consumable": 84,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 34,
+    "fields": {
+      "consumable": 10,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 35,
+    "fields": {
+      "consumable": 39,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 36,
+    "fields": {
+      "consumable": 67,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 37,
+    "fields": {
+      "consumable": 19,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 38,
+    "fields": {
+      "consumable": 48,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 39,
+    "fields": {
+      "consumable": 79,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 40,
+    "fields": {
+      "consumable": 23,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 41,
+    "fields": {
+      "consumable": 56,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 42,
+    "fields": {
+      "consumable": 88,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 43,
+    "fields": {
+      "consumable": 33,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 44,
+    "fields": {
+      "consumable": 62,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 45,
+    "fields": {
+      "consumable": 16,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 46,
+    "fields": {
+      "consumable": 44,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 47,
+    "fields": {
+      "consumable": 74,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 48,
+    "fields": {
+      "consumable": 1,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 49,
+    "fields": {
+      "consumable": 59,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 50,
+    "fields": {
+      "consumable": 28,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 51,
+    "fields": {
+      "consumable": 6,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 52,
+    "fields": {
+      "consumable": 35,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 53,
+    "fields": {
+      "consumable": 64,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 54,
+    "fields": {
+      "consumable": 13,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 55,
+    "fields": {
+      "consumable": 41,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 56,
+    "fields": {
+      "consumable": 70,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 57,
+    "fields": {
+      "consumable": 21,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 58,
+    "fields": {
+      "consumable": 52,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 59,
+    "fields": {
+      "consumable": 81,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 60,
+    "fields": {
+      "consumable": 29,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 61,
+    "fields": {
+      "consumable": 63,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 62,
+    "fields": {
+      "consumable": 7,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 63,
+    "fields": {
+      "consumable": 36,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 64,
+    "fields": {
+      "consumable": 65,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 65,
+    "fields": {
+      "consumable": 12,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 66,
+    "fields": {
+      "consumable": 45,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 67,
+    "fields": {
+      "consumable": 71,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 68,
+    "fields": {
+      "consumable": 2,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 69,
+    "fields": {
+      "consumable": 53,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 70,
+    "fields": {
+      "consumable": 82,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 71,
+    "fields": {
+      "consumable": 30,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 72,
+    "fields": {
+      "consumable": 8,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 73,
+    "fields": {
+      "consumable": 37,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 74,
+    "fields": {
+      "consumable": 69,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 75,
+    "fields": {
+      "consumable": 27,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 76,
+    "fields": {
+      "consumable": 54,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 77,
+    "fields": {
+      "consumable": 85,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 78,
+    "fields": {
+      "consumable": 46,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 79,
+    "fields": {
+      "consumable": 75,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 80,
+    "fields": {
+      "consumable": 34,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 81,
+    "fields": {
+      "consumable": 51,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 82,
+    "fields": {
+      "consumable": 80,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 83,
+    "fields": {
+      "consumable": 77,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 84,
+    "fields": {
+      "consumable": 86,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 85,
+    "fields": {
+      "consumable": 90,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 86,
+    "fields": {
+      "consumable": 11,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 87,
+    "fields": {
+      "consumable": 40,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 88,
+    "fields": {
+      "consumable": 68,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 89,
+    "fields": {
+      "consumable": 20,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 90,
+    "fields": {
+      "consumable": 50,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 91,
+    "fields": {
+      "consumable": 6,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 92,
+    "fields": {
+      "consumable": 35,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 93,
+    "fields": {
+      "consumable": 64,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 94,
+    "fields": {
+      "consumable": 13,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 95,
+    "fields": {
+      "consumable": 41,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 96,
+    "fields": {
+      "consumable": 70,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 97,
+    "fields": {
+      "consumable": 21,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 98,
+    "fields": {
+      "consumable": 52,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 99,
+    "fields": {
+      "consumable": 81,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 100,
+    "fields": {
+      "consumable": 29,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 101,
+    "fields": {
+      "consumable": 63,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 102,
+    "fields": {
+      "consumable": 7,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 103,
+    "fields": {
+      "consumable": 36,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 104,
+    "fields": {
+      "consumable": 65,
+      "inventory": 3,
+      "location": 20,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 105,
+    "fields": {
+      "consumable": 12,
+      "inventory": 1,
+      "location": 22,
+      "depleted": false
+    }
+  },
+  {
+    "model": "labfairyapi.consumableinventory",
+    "pk": 106,
+    "fields": {
+      "consumable": 45,
+      "inventory": 2,
+      "location": 21,
+      "depleted": false
+    }
+  }
+]
