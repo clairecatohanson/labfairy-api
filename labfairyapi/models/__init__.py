@@ -11,3 +11,4 @@ from .consumable import Consumable
 from .inventory import Inventory
 from .labinventory import LabInventory
 from .consumableinventory import ConsumableInventory
+from .researcherequipment import ResearcherEquipment

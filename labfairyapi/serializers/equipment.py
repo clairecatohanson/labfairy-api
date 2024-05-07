@@ -6,6 +6,7 @@ from labfairyapi.models import (
     Location,
     Room,
     Building,
+    Researcher,
 )
 
 
@@ -54,6 +55,7 @@ class EquipmentListSerializer(serializers.ModelSerializer):
     equipment_labs = EquipmentLabSerializer(many=True)
     location = LocationSerializer(many=False)
     has_access = serializers.SerializerMethodField()
+    requested_access = serializers.SerializerMethodField()
 
     def get_has_access(self, obj):
         request = self.context["request"]
@@ -65,9 +67,28 @@ class EquipmentListSerializer(serializers.ModelSerializer):
             return True
         return False
 
+    def get_requested_access(self, obj):
+        request = self.context["request"]
+        user = request.auth.user
+        if user.is_superuser:
+            return False
+
+        researcher = Researcher.objects.get(user=user)
+        if obj.access_requests.filter(researcher=researcher).exists():
+            return True
+        return False
+
     class Meta:
         model = Equipment
-        fields = ("id", "name", "location", "equipment_labs", "archived", "has_access")
+        fields = (
+            "id",
+            "name",
+            "location",
+            "equipment_labs",
+            "archived",
+            "has_access",
+            "requested_access",
+        )
 
 
 class EquipmentFullSerializer(serializers.ModelSerializer):

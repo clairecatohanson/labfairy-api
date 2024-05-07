@@ -8,3 +8,4 @@ from .location import LocationViewSet
 from .lab import LabViewSet
 from .maintenance import MaintenanceViewSet
 from .user import UserViewSet
+from .researcherequipment import ResearcherEquipmentViewSet

@@ -14,3 +14,4 @@ from .location import LocationSerializer
 from .lab import LabSerializer
 from .maintenance import MaintenanceSerializer
 from .user import SuperUserSerializer, UserResearcherSerializer
+from .researchequipment import ResearcherEquipmentSerializer
