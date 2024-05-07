@@ -1,0 +1,26 @@
+[
+  {
+    "model": "labfairyapi.inventory",
+    "pk": 1,
+    "fields": {
+      "name": "Wet Lab Consumables",
+      "description": "General single-use lab plastics"
+    }
+  },
+  {
+    "model": "labfairyapi.inventory",
+    "pk": 2,
+    "fields": {
+      "name": "Structural Biology Lab Consumables",
+      "description": "Cryo supplies for use by Structural Biology Lab"
+    }
+  },
+  {
+    "model": "labfairyapi.inventory",
+    "pk": 3,
+    "fields": {
+      "name": "Glassware",
+      "description": "Reusable glassware for general use"
+    }
+  }
+]

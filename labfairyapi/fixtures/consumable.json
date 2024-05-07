@@ -1,0 +1,902 @@
+[
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 1,
+    "fields": {
+      "name": "Pipette Tips 20 μl",
+      "description": "Sterile, non-filtered pipette tips for volumes up to 20 μl",
+      "vendor": "Eppendorf",
+      "price": "15.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 2,
+    "fields": {
+      "name": "Pipette Tips 200 μl",
+      "description": "Sterile, non-filtered pipette tips for volumes up to 200 μl",
+      "vendor": "VWR",
+      "price": "18.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 3,
+    "fields": {
+      "name": "Pipette Tips 1000 μl",
+      "description": "Sterile, non-filtered pipette tips for volumes up to 1000 μl",
+      "vendor": "Biotix",
+      "price": "22.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 4,
+    "fields": {
+      "name": "Serological Pipettes 5 ml",
+      "description": "Sterile, individually wrapped serological pipettes with 1/10 ml graduations",
+      "vendor": "Corning",
+      "price": "37.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 5,
+    "fields": {
+      "name": "Serological Pipettes 25 ml",
+      "description": "Sterile, individually wrapped serological pipettes with 1/4 ml graduations",
+      "vendor": "Falcon",
+      "price": "49.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 6,
+    "fields": {
+      "name": "Glass Beakers 50 ml",
+      "description": "Low-form borosilicate glass beakers with pour-out lip",
+      "vendor": "Kimble",
+      "price": "8.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 7,
+    "fields": {
+      "name": "Glass Beakers 250 ml",
+      "description": "Low-form borosilicate glass beakers with pour-out lip",
+      "vendor": "Pyrex",
+      "price": "12.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 8,
+    "fields": {
+      "name": "Parafilm M",
+      "description": "Moisture-resistant, self-sealing film for sealing containers and protecting samples",
+      "vendor": "Bemis",
+      "price": "9.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 9,
+    "fields": {
+      "name": "Conical Tubes 15 ml",
+      "description": "Sterile, polypropylene conical tubes with graduations and caps",
+      "vendor": "Corning",
+      "price": "28.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 10,
+    "fields": {
+      "name": "Conical Tubes 50 ml",
+      "description": "Sterile, polypropylene conical tubes with graduations and caps",
+      "vendor": "Falcon",
+      "price": "34.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 11,
+    "fields": {
+      "name": "Microcentrifuge Tubes 1.5 ml",
+      "description": "Non-sterile, polypropylene tubes with attached caps",
+      "vendor": "Eppendorf",
+      "price": "19.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 12,
+    "fields": {
+      "name": "Microcentrifuge Tubes 2.0 ml",
+      "description": "Non-sterile, polypropylene tubes with attached caps",
+      "vendor": "VWR",
+      "price": "22.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 13,
+    "fields": {
+      "name": "Cryogenic Vials 2 ml",
+      "description": "Polypropylene vials for storage at ultra-low temperatures",
+      "vendor": "Nalgene",
+      "price": "79.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 14,
+    "fields": {
+      "name": "Petri Dishes 100 mm",
+      "description": "Sterile, polystyrene Petri dishes with vented lids",
+      "vendor": "Falcon",
+      "price": "42.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 15,
+    "fields": {
+      "name": "Microfuge Tube Racks",
+      "description": "Polypropylene racks for holding up to 96 microcentrifuge tubes",
+      "vendor": "VWR",
+      "price": "14.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 16,
+    "fields": {
+      "name": "Serological Pipette Reservoir",
+      "description": "Polystyrene reservoirs for use with serological pipettes",
+      "vendor": "Corning",
+      "price": "19.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 17,
+    "fields": {
+      "name": "pH Strips",
+      "description": "Disposable pH test strips with color chart, pH range 0-14",
+      "vendor": "Whatman",
+      "price": "7.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 18,
+    "fields": {
+      "name": "Kimwipes",
+      "description": "Delicate task wipers made from low-lint paper",
+      "vendor": "Kimberly-Clark",
+      "price": "11.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 19,
+    "fields": {
+      "name": "Nitrile Gloves (S)",
+      "description": "Powder-free nitrile gloves, small size",
+      "vendor": "Microflex",
+      "price": "24.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 20,
+    "fields": {
+      "name": "Nitrile Gloves (M)",
+      "description": "Powder-free nitrile gloves, medium size",
+      "vendor": "Microflex",
+      "price": "24.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 21,
+    "fields": {
+      "name": "Nitrile Gloves (L)",
+      "description": "Powder-free nitrile gloves, large size",
+      "vendor": "Microflex",
+      "price": "24.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 22,
+    "fields": {
+      "name": "Micro Spatulas",
+      "description": "Polypropylene spatulas for weighing and transferring solids",
+      "vendor": "VWR",
+      "price": "9.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 23,
+    "fields": {
+      "name": "Disposable Weighing Dishes",
+      "description": "Aluminum weighing dishes for analytical balances",
+      "vendor": "Fisherbrand",
+      "price": "14.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 24,
+    "fields": {
+      "name": "Magnetic Stir Bars",
+      "description": "PTFE-coated magnetic stir bars, assorted sizes",
+      "vendor": "Bel-Art",
+      "price": "29.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 25,
+    "fields": {
+      "name": "Graduated Cylinders 10 ml",
+      "description": "Borosilicate glass cylinders with hex base and printed graduations",
+      "vendor": "Kimax",
+      "price": "6.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 26,
+    "fields": {
+      "name": "Graduated Cylinders 100 ml",
+      "description": "Borosilicate glass cylinders with hex base and printed graduations",
+      "vendor": "Kimax",
+      "price": "9.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 27,
+    "fields": {
+      "name": "Graduated Cylinders 1000 ml",
+      "description": "Borosilicate glass cylinders with hex base and printed graduations",
+      "vendor": "Kimax",
+      "price": "19.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 28,
+    "fields": {
+      "name": "Volumetric Flasks 10 ml",
+      "description": "Class A borosilicate flasks with plastic leak-proof caps",
+      "vendor": "Pyrex",
+      "price": "14.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 29,
+    "fields": {
+      "name": "Volumetric Flasks 100 ml",
+      "description": "Class A borosilicate flasks with plastic leak-proof caps",
+      "vendor": "Pyrex",
+      "price": "19.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 30,
+    "fields": {
+      "name": "Volumetric Flasks 1000 ml",
+      "description": "Class A borosilicate flasks with plastic leak-proof caps",
+      "vendor": "Pyrex",
+      "price": "29.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 31,
+    "fields": {
+      "name": "Desiccator Cabinets",
+      "description": "Polycarbonate desiccators with neoprene gaskets and plastic plates",
+      "vendor": "Scienceware",
+      "price": "129.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 32,
+    "fields": {
+      "name": "Desiccant Packs",
+      "description": "Indicating silica gel desiccant packs, 5 grams each",
+      "vendor": "Dry & Drypack",
+      "price": "12.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 33,
+    "fields": {
+      "name": "pH Buffers 4.0",
+      "description": "Premixed, high-purity pH buffers in 500 ml bottles",
+      "vendor": "Hach",
+      "price": "19.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 34,
+    "fields": {
+      "name": "pH Buffers 7.0",
+      "description": "Premixed, high-purity pH buffers in 500 ml bottles",
+      "vendor": "Hach",
+      "price": "19.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 35,
+    "fields": {
+      "name": "pH Buffers 10.0",
+      "description": "Premixed, high-purity pH buffers in 500 ml bottles",
+      "vendor": "Hach",
+      "price": "19.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 36,
+    "fields": {
+      "name": "Lens Cleaning Tissues",
+      "description": "Low-lint tissues for cleaning microscopes and other optics",
+      "vendor": "Chemwipes",
+      "price": "8.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 37,
+    "fields": {
+      "name": "Transfer Pipettes",
+      "description": "Disposable, non-sterile polystyrene transfer pipettes",
+      "vendor": "Samco",
+      "price": "14.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 38,
+    "fields": {
+      "name": "Culture Tubes 16x125 mm",
+      "description": "Borosilicate glass tubes with screw caps, 16x125 mm",
+      "vendor": "Pyrex",
+      "price": "49.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 39,
+    "fields": {
+      "name": "Culture Tubes 20x150 mm",
+      "description": "Borosilicate glass tubes with screw caps, 20x150 mm",
+      "vendor": "Pyrex",
+      "price": "59.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 40,
+    "fields": {
+      "name": "Thermal Printer Paper",
+      "description": "Direct thermal printer paper rolls for lab printers",
+      "vendor": "Intermec",
+      "price": "14.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 41,
+    "fields": {
+      "name": "Cryogenic Marker Pens",
+      "description": "Permanent marker pens for labeling at ultra-low temperatures",
+      "vendor": "VWR",
+      "price": "19.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 42,
+    "fields": {
+      "name": "Label Tape",
+      "description": "White vinyl tape for manually labeling tubes and containers",
+      "vendor": "Brady",
+      "price": "9.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 43,
+    "fields": {
+      "name": "Chemical Scoops",
+      "description": "Polypropylene scoops for measuring and transferring powders",
+      "vendor": "Nalgene",
+      "price": "16.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 44,
+    "fields": {
+      "name": "Desiccator Plates",
+      "description": "Perforated polypropylene plates for desiccator cabinets",
+      "vendor": "Bel-Art",
+      "price": "39.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 45,
+    "fields": {
+      "name": "Filter Paper Discs",
+      "description": "Qualitative filter paper discs, 90 mm diameter",
+      "vendor": "Whatman",
+      "price": "29.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 46,
+    "fields": {
+      "name": "Chromatography Paper",
+      "description": "Cellulose chromatography paper sheets, 20 cm x 20 cm",
+      "vendor": "Whatman",
+      "price": "39.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 47,
+    "fields": {
+      "name": "Cryogenic Gloves",
+      "description": "Elbow-length gloves for handling items at ultra-low temperatures",
+      "vendor": "Tempshield",
+      "price": "79.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 48,
+    "fields": {
+      "name": "Cryogenic Face Shields",
+      "description": "Full face shields for protection when handling cryogenic materials",
+      "vendor": "Badger",
+      "price": "99.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 49,
+    "fields": {
+      "name": "Pipette Stands",
+      "description": "Racks for storing and organizing pipettes upright",
+      "vendor": "Bel-Art",
+      "price": "24.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 50,
+    "fields": {
+      "name": "Pipette Controllers",
+      "description": "Hand-held controllers for operating standard air displacement pipettes",
+      "vendor": "Drummond",
+      "price": "249.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 51,
+    "fields": {
+      "name": "Microplate 96-well",
+      "description": "Polystyrene microplates with 96 wells for ELISA and other assays",
+      "vendor": "Corning",
+      "price": "79.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 52,
+    "fields": {
+      "name": "Microplate 384-well",
+      "description": "Polystyrene microplates with 384 wells for high-throughput screening",
+      "vendor": "Greiner",
+      "price": "119.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 53,
+    "fields": {
+      "name": "PCR Plates 96-well",
+      "description": "Polypropylene plates with 96 wells for PCR and qPCR",
+      "vendor": "Eppendorf",
+      "price": "99.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 54,
+    "fields": {
+      "name": "PCR Tube Strips 8-well",
+      "description": "Polypropylene strips of 8 tubes with attached caps for PCR",
+      "vendor": "VWR",
+      "price": "29.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 55,
+    "fields": {
+      "name": "Gel Loading Dye",
+      "description": "6X gel loading buffer with tracking dyes for electrophoresis",
+      "vendor": "NEB",
+      "price": "59.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 56,
+    "fields": {
+      "name": "Agarose Powder",
+      "description": "High quality molecular biology grade agarose powder",
+      "vendor": "IBI Scientific",
+      "price": "129.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 57,
+    "fields": {
+      "name": "Ethidium Bromide Solution",
+      "description": "10 mg/ml solution for nucleic acid gel staining",
+      "vendor": "Amresco",
+      "price": "79.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 58,
+    "fields": {
+      "name": "SYBR Safe DNA Stain",
+      "description": "Non-mutagenic nucleic acid gel stain as EtBr alternative",
+      "vendor": "Invitrogen",
+      "price": "199.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 59,
+    "fields": {
+      "name": "1 kb DNA Ladder",
+      "description": "1 kb molecular weight marker for DNA electrophoresis",
+      "vendor": "NEB",
+      "price": "89.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 60,
+    "fields": {
+      "name": "Protein Gel Boxes",
+      "description": "Mini vertical electrophoresis units for protein gels",
+      "vendor": "Bio-Rad",
+      "price": "399.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 61,
+    "fields": {
+      "name": "Nitrocellulose Membranes",
+      "description": "Reinforced nitrocellulose for Western blotting, 0.45 um",
+      "vendor": "Amersham",
+      "price": "249.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 62,
+    "fields": {
+      "name": "PVDF Membranes",
+      "description": "Polyvinylidene fluoride membranes for Western blots",
+      "vendor": "Millipore",
+      "price": "299.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 63,
+    "fields": {
+      "name": "Electroblotting Paper",
+      "description": "Extra thick blotting paper for protein transfers",
+      "vendor": "Bio-Rad",
+      "price": "99.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 64,
+    "fields": {
+      "name": "Film Cassettes",
+      "description": "Autoradiography cassettes for Western blot film exposure",
+      "vendor": "Amersham",
+      "price": "149.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 65,
+    "fields": {
+      "name": "Autoradiography Film",
+      "description": "Blue sensitive X-ray film for autoradiography",
+      "vendor": "Kodak",
+      "price": "109.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 66,
+    "fields": {
+      "name": "Scintillation Vials",
+      "description": "20 ml glass vials for liquid scintillation counting",
+      "vendor": "Wheaton",
+      "price": "79.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 67,
+    "fields": {
+      "name": "Liquid Scintillation Cocktail",
+      "description": "Biodegradable cocktail for aqueous and non-aqueous samples",
+      "vendor": "Perkin Elmer",
+      "price": "299.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 68,
+    "fields": {
+      "name": "Quartz Cuvettes",
+      "description": "Four-sided clear cuvettes for spectrophotometry",
+      "vendor": "FireflySci",
+      "price": "99.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 69,
+    "fields": {
+      "name": "Cell Culture Plates 6-well",
+      "description": "Treated polystyrene plates for culturing adherent cells",
+      "vendor": "Corning",
+      "price": "59.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 70,
+    "fields": {
+      "name": "Cell Culture Flasks 75cm2",
+      "description": "Treated polystyrene flasks for culturing adherent cells",
+      "vendor": "Falcon",
+      "price": "89.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 71,
+    "fields": {
+      "name": "DPBS Solution",
+      "description": "Dulbecco's phosphate buffered saline, 1X, 500 ml",
+      "vendor": "Gibco",
+      "price": "24.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 72,
+    "fields": {
+      "name": "Trypsin-EDTA Solution",
+      "description": "0.25% trypsin with EDTA for cell dissociation",
+      "vendor": "Corning",
+      "price": "29.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 73,
+    "fields": {
+      "name": "Cell Strainers 100 um",
+      "description": "Sterile nylon mesh strainers for filtering cell suspensions",
+      "vendor": "Falcon",
+      "price": "79.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 74,
+    "fields": {
+      "name": "Hemacytometers",
+      "description": "Dual-chamber disposable hemacytometers for cell counting",
+      "vendor": "Hausser Scientific",
+      "price": "99.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 75,
+    "fields": {
+      "name": "Centrifuge Buckets 50 ml",
+      "description": "Aerosol-tight sealed buckets for swing-out rotor",
+      "vendor": "Beckman Coulter",
+      "price": "499.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 76,
+    "fields": {
+      "name": "Ultracentrifuge Tubes 3.5 ml",
+      "description": "Polycarbonate thick-walled tubes for ultracentrifugation",
+      "vendor": "Beckman Coulter",
+      "price": "249.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 77,
+    "fields": {
+      "name": "Spin-X Centrifuge Tubes",
+      "description": "Tubes with cellulose acetate membrane for filtering",
+      "vendor": "Corning",
+      "price": "169.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 78,
+    "fields": {
+      "name": "Chromatography Columns",
+      "description": "Polypropylene columns for gravity chromatography, 10 ml",
+      "vendor": "Bio-Rad",
+      "price": "79.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 79,
+    "fields": {
+      "name": "Dialysis Membranes",
+      "description": "Regenerated cellulose membranes for dialysis, 12-14 kDa MWCO",
+      "vendor": "Spectrum Labs",
+      "price": "149.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 80,
+    "fields": {
+      "name": "Syringe Filters 0.22 um",
+      "description": "Non-sterile polyethersulfone membrane syringe filters",
+      "vendor": "Millipore",
+      "price": "59.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 81,
+    "fields": {
+      "name": "Glass Fiber Filters",
+      "description": "Glass microfiber filters for general filtration, 47 mm",
+      "vendor": "Whatman",
+      "price": "79.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 82,
+    "fields": {
+      "name": "HEPA Capsule Filters",
+      "description": "Disposable in-line filters for airflow sterilization",
+      "vendor": "Pall",
+      "price": "199.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 83,
+    "fields": {
+      "name": "Precast Protein Gels",
+      "description": "Commercial polyacrylamide gels for protein electrophoresis",
+      "vendor": "Bio-Rad",
+      "price": "129.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 84,
+    "fields": {
+      "name": "Glass Vials 2 ml",
+      "description": "Amber borosilicate glass vials with PTFE-lined caps",
+      "vendor": "Wheaton",
+      "price": "59.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 85,
+    "fields": {
+      "name": "Blotting Paper",
+      "description": "Extra thick absorbent paper for Western blotting",
+      "vendor": "VWR",
+      "price": "39.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 86,
+    "fields": {
+      "name": "Silicone Septa",
+      "description": "Butyl rubber septa for glass vial caps",
+      "vendor": "Wheaton",
+      "price": "29.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 87,
+    "fields": {
+      "name": "Crimp Seals",
+      "description": "Aluminum seals for crimping over vial caps",
+      "vendor": "Wheaton",
+      "price": "19.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 88,
+    "fields": {
+      "name": "Repeater Pipettes",
+      "description": "Manual multi-channel pipettes for serial dispensing",
+      "vendor": "Eppendorf",
+      "price": "499.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 89,
+    "fields": {
+      "name": "Loop Sterilizers",
+      "description": "Portable butane-powered loop sterilizing units",
+      "vendor": "Wheaton",
+      "price": "79.99"
+    }
+  },
+  {
+    "model": "labfairyapi.consumable",
+    "pk": 90,
+    "fields": {
+      "name": "Sterile Inoculating Loops",
+      "description": "Disposable plastic loops for bacterial streak plating",
+      "vendor": "VWR",
+      "price": "39.99"
+    }
+  }
+]

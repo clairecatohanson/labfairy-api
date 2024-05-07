@@ -1,0 +1,58 @@
+[
+  {
+    "model": "labfairyapi.labinventory",
+    "pk": 1,
+    "fields": {
+      "lab": 2,
+      "inventory": 1
+    }
+  },
+  {
+    "model": "labfairyapi.labinventory",
+    "pk": 2,
+    "fields": {
+      "lab": 2,
+      "inventory": 2
+    }
+  },
+  {
+    "model": "labfairyapi.labinventory",
+    "pk": 3,
+    "fields": {
+      "lab": 2,
+      "inventory": 3
+    }
+  },
+  {
+    "model": "labfairyapi.labinventory",
+    "pk": 4,
+    "fields": {
+      "lab": 3,
+      "inventory": 1
+    }
+  },
+  {
+    "model": "labfairyapi.labinventory",
+    "pk": 5,
+    "fields": {
+      "lab": 3,
+      "inventory": 3
+    }
+  },
+  {
+    "model": "labfairyapi.labinventory",
+    "pk": 6,
+    "fields": {
+      "lab": 4,
+      "inventory": 1
+    }
+  },
+  {
+    "model": "labfairyapi.labinventory",
+    "pk": 7,
+    "fields": {
+      "lab": 4,
+      "inventory": 3
+    }
+  }
+]
