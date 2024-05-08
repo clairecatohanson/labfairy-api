@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ValidationError
+from django.db.models import Q
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
@@ -102,16 +103,22 @@ class EquipmentViewSet(ViewSet):
         return Response({}, status=status.HTTP_204_NO_CONTENT)
 
     def list(self, request):
-        # Check for query params
+        # Check user
         user = request.auth.user
         if user.is_superuser:
             equipment = Equipment.objects.all()
         else:
             researcher = Researcher.objects.get(user=user)
             restricted = request.query_params.get("restricted")
-            if restricted is not None and restricted == "access":
+            if restricted == "access":
+                has_lab_access = Q(equipment_labs__lab__researchers=researcher)
+                has_requested_access = Q(access_requests__researcher=researcher)
+                has_approved_access = Q(access_requests__approved=True)
 
-                equipment = Equipment.objects.filter(equipment_labs__lab=researcher.lab)
+                # equipment = Equipment.objects.filter(equipment_labs__lab=researcher.lab)
+                equipment = Equipment.objects.filter(
+                    has_lab_access | (has_requested_access & has_approved_access)
+                ).distinct()
             else:
                 equipment = Equipment.objects.all()
 
@@ -157,14 +164,20 @@ class EquipmentViewSet(ViewSet):
         if not user.is_superuser:
             researcher = Researcher.objects.get(user=user)
 
-            # Get the LabEquipment queryset for labs associated with this equipment instance
-            lab_equipment_set = equipment.equipment_labs.all()
+            # Get list of equipment that the researcher has access to
+            has_lab_access = Q(equipment_labs__lab__researchers=researcher)
+            has_requested_access = Q(access_requests__researcher=researcher)
+            has_approved_access = Q(access_requests__approved=True)
 
-            # Get the lab_ids from the lab_equipment_set
-            lab_ids = [labequipment.lab.id for labequipment in lab_equipment_set]
+            available_equipment = Equipment.objects.filter(
+                has_lab_access | (has_requested_access & has_approved_access)
+            ).distinct()
 
-            # Determine whether the researcher is associated with one of the found lab_ids
-            if researcher.lab.id not in lab_ids:
+            # Check if the equipment instance is in the queryset of allowed equipment
+            allowed = available_equipment.filter(pk=equipment.pk).exists()
+
+            # If not allowed, return error. Otherwise, return equipment details.
+            if not allowed:
                 return Response(
                     {"error": "You are not authorized to perform this action."},
                     status=status.HTTP_403_FORBIDDEN,

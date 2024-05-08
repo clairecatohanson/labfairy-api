@@ -15,3 +15,8 @@ from .lab import LabSerializer
 from .maintenance import MaintenanceSerializer
 from .user import SuperUserSerializer, UserResearcherSerializer
 from .researchequipment import ResearcherEquipmentSerializer
+from .inventory import InventorySerializer
+from .consumableinventory import (
+    ConsumableInventoryListSerializer,
+    ConsumableInventoryDetailSerializer,
+)

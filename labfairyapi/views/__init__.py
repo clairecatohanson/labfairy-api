@@ -9,3 +9,5 @@ from .lab import LabViewSet
 from .maintenance import MaintenanceViewSet
 from .user import UserViewSet
 from .researcherequipment import ResearcherEquipmentViewSet
+from .inventory import InventoryViewSet
+from .consumableinventory import ConsumableInventoryViewSet

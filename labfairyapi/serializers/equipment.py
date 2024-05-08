@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from django.db.models import Q
 from labfairyapi.models import (
     Equipment,
     LabEquipment,
@@ -65,6 +66,12 @@ class EquipmentListSerializer(serializers.ModelSerializer):
             return True
         if obj.equipment_labs.filter(lab=user.researcher.lab).exists():
             return True
+
+        requested_access = Q(researcher=user.researcher)
+        approved_access = Q(approved=True)
+        if obj.access_requests.filter(requested_access & approved_access).exists():
+            return True
+
         return False
 
     def get_requested_access(self, obj):

@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ValidationError
+from django.db.models import Q
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
@@ -144,16 +145,19 @@ class EquipmentMaintenanceViewSet(ViewSet):
     def list(self, request):
         # Check if the user is a superuser. If not, get the associated researcher.
         user = request.auth.user
-        if user.is_superuser:
-            maintenance_tickets = EquipmentMaintenance.objects.all()
+        maintenance_tickets = EquipmentMaintenance.objects.all()
 
-        else:
+        if not user.is_superuser:
             researcher = Researcher.objects.get(user=user)
 
-            # Filter EquipmentMaintenance set for equipment that the lab has access to
-            maintenance_tickets = EquipmentMaintenance.objects.filter(
-                equipment__equipment_labs__lab__researchers=researcher
-            )
+            # Filter EquipmentMaintenance set for equipment that the lab or researcher has access to
+            has_lab_access = Q(equipment__equipment_labs__lab__researchers=researcher)
+            has_requested_access = Q(equipment__access_requests__researcher=researcher)
+            has_approved_access = Q(equipment__access_requests__approved=True)
+
+            maintenance_tickets = maintenance_tickets.filter(
+                has_lab_access | (has_requested_access & has_approved_access)
+            ).distinct()
 
         # Get optional query params and filter maintenance_tickets
         equipment_id = request.query_params.get("equipment_id")
@@ -217,24 +221,15 @@ class EquipmentMaintenanceViewSet(ViewSet):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def retrieve(self, request, pk=None):
-        maintenance_ticket = get_object_or_404(EquipmentMaintenance, pk=pk)
-
-        # Check if the user is a superuser. If not, get the associated researcher.
+        # Check if the user is a superuser.
         user = request.auth.user
         if not user.is_superuser:
-            researcher = Researcher.objects.get(user=user)
+            return Response(
+                {"error": "You are not authorized to perform this action."},
+                status=status.HTTP_403_FORBIDDEN,
+            )
 
-            # Get researcher's equipment_ids
-            lab_equipment_set = researcher.lab.lab_equipment.all()
-            equipment_ids = [
-                lab_equipment.equipment.id for lab_equipment in lab_equipment_set
-            ]
-
-            if maintenance_ticket.equipment.id not in equipment_ids:
-                return Response(
-                    {"error": "You are not authorized to perform this action."},
-                    status=status.HTTP_403_FORBIDDEN,
-                )
+        maintenance_ticket = get_object_or_404(EquipmentMaintenance, pk=pk)
 
         serializer = EquipmentMaintenanceDetailsSerializer(
             maintenance_ticket, many=False
