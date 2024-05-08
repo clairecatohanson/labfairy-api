@@ -15,6 +15,10 @@ router.register(r"locations", LocationViewSet, "locations")
 router.register(r"labs", LabViewSet, "labs")
 router.register(r"profile", UserViewSet, "profile")
 router.register(r"equipmentrequests", ResearcherEquipmentViewSet, "researcherequipment")
+router.register(r"inventories", InventoryViewSet, "inventories")
+router.register(
+    r"inventoryconsumables", ConsumableInventoryViewSet, "consumableinventories"
+)
 
 urlpatterns = [
     path("", include(router.urls)),
