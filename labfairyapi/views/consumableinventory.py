@@ -65,3 +65,34 @@ class ConsumableInventoryViewSet(ViewSet):
         serializer = ConsumableInventoryDetailSerializer(stocked_consumable, many=False)
 
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def update(self, request, pk=None):
+        # Get instance
+        item = get_object_or_404(ConsumableInventory, pk=pk)
+
+        # Check that user has access to the instance
+        user = request.auth.user
+        if not user.is_superuser:
+            researcher = Researcher.objects.get(user=user)
+            available_consumables = ConsumableInventory.objects.filter(
+                inventory__lab_inventories__lab__researchers=researcher
+            )
+            allowed = available_consumables.filter(pk=item.pk).exists()
+            if not allowed:
+                return Response(
+                    {"error": "You are not authorized to perform this action."},
+                    status=status.HTTP_403_FORBIDDEN,
+                )
+
+        # Get optional keys
+        depleted = request.data.get("depleted", None)
+
+        if depleted is not None:
+            if depleted == True:
+                item.depleted = True
+            if depleted == False:
+                item.depleted = False
+
+        item.save()
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
