@@ -1,0 +1,9 @@
+[
+  {
+    "model": "labfairyapi.order",
+    "pk": 1,
+    "fields": {
+      "date_completed": "2024-05-01T00:00:00Z"
+    }
+  }
+]
