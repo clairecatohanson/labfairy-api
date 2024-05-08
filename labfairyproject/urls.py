@@ -19,6 +19,8 @@ router.register(r"inventories", InventoryViewSet, "inventories")
 router.register(
     r"inventoryconsumables", ConsumableInventoryViewSet, "consumableinventories"
 )
+router.register(r"supplyrequests", SupplyRequestViewSet, "supplyrequests")
+router.register(r"orders", OrderViewSet, "orders")
 
 urlpatterns = [
     path("", include(router.urls)),
