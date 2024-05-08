@@ -12,3 +12,5 @@ from .inventory import Inventory
 from .labinventory import LabInventory
 from .consumableinventory import ConsumableInventory
 from .researcherequipment import ResearcherEquipment
+from .order import Order
+from .supplyrequest import SupplyRequest
