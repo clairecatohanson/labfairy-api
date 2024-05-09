@@ -25,7 +25,15 @@ class OrderViewSet(ViewSet):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     def list(self, request):
-        orders = Order.objects.all()
+        # Get optional query_params
+        order_status = request.query_params.get("status", None)
+        if order_status == "open":
+            orders = Order.objects.filter(date_completed__isnull=True)
+
+        else:
+            orders = Order.objects.all()
+
+        orders = orders.order_by("-pk")
         serializer = OrderSerializer(orders, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -33,3 +41,15 @@ class OrderViewSet(ViewSet):
         order = get_object_or_404(Order, pk=pk)
         serializer = OrderDetailSerializer(order, many=False)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def update(self, request, pk=None):
+        order = get_object_or_404(Order, pk=pk)
+
+        # Get fields from body
+        date_completed = request.data.get("date_completed", None)
+        if date_completed is not None:
+            order.date_completed = date_completed
+
+        order.save()
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)

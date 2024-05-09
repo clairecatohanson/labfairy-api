@@ -3,7 +3,7 @@ from django.core.exceptions import ValidationError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
-from labfairyapi.models import Consumable, SupplyRequest, Researcher
+from labfairyapi.models import Consumable, SupplyRequest, Researcher, Order
 from labfairyapi.serializers import SupplyRequestSerializer
 
 
@@ -51,6 +51,49 @@ class SupplyRequestViewSet(ViewSet):
             researcher = Researcher.objects.get(user=user)
             supply_requests = supply_requests.filter(researcher=researcher)
 
+        # Get optional query_params
+        request_status = request.query_params.get("status")
+        limit = request.query_params.get("limit")
+
+        if request_status is not None:
+            if request_status == "requested":
+                supply_requests = supply_requests.filter(order__isnull=True)
+
+            if request_status == "ordered":
+                supply_requests = supply_requests.filter(
+                    order__isnull=False, date_received__isnull=True
+                )
+
+        supply_requests = supply_requests.order_by("date_requested")
+
+        if limit is not None:
+            limit = int(limit)
+            supply_requests = supply_requests[:limit]
+
         serializer = SupplyRequestSerializer(supply_requests, many=True)
 
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def update(self, request, pk=None):
+        user = request.auth.user
+        supply_request = get_object_or_404(SupplyRequest, pk=pk)
+
+        # Get data from body
+        order_id = request.data.get("order_id", None)
+        date_received = request.data.get("date_received", None)
+
+        if order_id is not None:
+            if not user.is_superuser:
+                return Response(
+                    {"error": "You are not authorized to perform this action."},
+                    status=status.HTTP_403_FORBIDDEN,
+                )
+            order = get_object_or_404(Order, pk=order_id)
+            supply_request.order = order
+
+        if date_received is not None:
+            supply_request.date_received = date_received
+
+        supply_request.save()
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
