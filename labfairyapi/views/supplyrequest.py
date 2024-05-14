@@ -1,9 +1,10 @@
 from django.shortcuts import get_object_or_404
+from django.db.models import Q
 from django.core.exceptions import ValidationError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
-from labfairyapi.models import Consumable, SupplyRequest, Researcher, Order
+from labfairyapi.models import Consumable, SupplyRequest, Researcher, Order, Inventory
 from labfairyapi.serializers import SupplyRequestSerializer
 
 
@@ -14,22 +15,31 @@ class SupplyRequestViewSet(ViewSet):
         # Check for required keys in the request body
         consumable_id = request.data.get("consumable_id")
         quantity = request.data.get("quantity")
+        inventory_id = request.data.get("inventory_id")
 
-        if not consumable_id or not quantity:
+        if not consumable_id or not quantity or not inventory_id:
             return Response(
-                {"error": "Missing required fields: consumable_id and/or quantity"},
+                {
+                    "error": "Missing required fields: consumable_id, quantity, and/or inventory_id"
+                },
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
         consumable = get_object_or_404(Consumable, pk=consumable_id)
+        inventory = get_object_or_404(Inventory, pk=inventory_id)
 
         if user.is_superuser:
             # Create a new SupplyRequest instance in memory (i.e. as opposed to create) with the required keys
-            supply_request = SupplyRequest(consumable=consumable, quantity=quantity)
+            supply_request = SupplyRequest(
+                consumable=consumable, quantity=quantity, inventory=inventory
+            )
         else:
             researcher = Researcher.objects.get(user=user)
             supply_request = SupplyRequest(
-                researcher=researcher, consumable=consumable, quantity=quantity
+                researcher=researcher,
+                consumable=consumable,
+                quantity=quantity,
+                inventory=inventory,
             )
         # Run through model validators before saving the in-memory instance to the database
         try:
@@ -60,8 +70,11 @@ class SupplyRequestViewSet(ViewSet):
                 supply_requests = supply_requests.filter(order__isnull=True)
 
             if request_status == "ordered":
+                added_to_cart = Q(order__isnull=False)
+                order_completed = Q(order__date_completed__isnull=False)
+                not_received = Q(date_received__isnull=True)
                 supply_requests = supply_requests.filter(
-                    order__isnull=False, date_received__isnull=True
+                    added_to_cart & order_completed & not_received
                 )
 
         supply_requests = supply_requests.order_by("date_requested")
