@@ -8,6 +8,7 @@
       "quantity": 2,
       "date_requested": "2024-04-01T12:00:00Z",
       "order": 1,
+      "inventory": 1,
       "date_received": "2024-05-06T00:00:00Z"
     }
   },
@@ -20,6 +21,7 @@
       "quantity": 1,
       "date_requested": "2024-04-10T10:30:00Z",
       "order": 1,
+      "inventory": 1,
       "date_received": "2024-05-06T00:00:00Z"
     }
   },
@@ -32,6 +34,7 @@
       "quantity": 3,
       "date_requested": "2024-04-15T09:00:00Z",
       "order": 1,
+      "inventory": 2,
       "date_received": "2024-05-06T00:00:00Z"
     }
   },
@@ -44,6 +47,7 @@
       "quantity": 2,
       "date_requested": "2024-04-20T14:30:00Z",
       "order": 1,
+      "inventory": 2,
       "date_received": "2024-05-06T00:00:00Z"
     }
   },
@@ -56,6 +60,7 @@
       "quantity": 1,
       "date_requested": "2024-04-25T11:00:00Z",
       "order": 1,
+      "inventory": 3,
       "date_received": "2024-05-06T00:00:00Z"
     }
   },
@@ -68,6 +73,7 @@
       "quantity": 2,
       "date_requested": "2024-04-30T16:00:00Z",
       "order": 1,
+      "inventory": 3,
       "date_received": "2024-05-06T00:00:00Z"
     }
   },
@@ -80,6 +86,7 @@
       "quantity": 3,
       "date_requested": "2024-05-01T09:30:00Z",
       "order": 1,
+      "inventory": 1,
       "date_received": "2024-05-06T00:00:00Z"
     }
   },
@@ -92,6 +99,7 @@
       "quantity": 1,
       "date_requested": "2024-05-02T13:00:00Z",
       "order": 1,
+      "inventory": 2,
       "date_received": "2024-05-06T00:00:00Z"
     }
   },
@@ -104,6 +112,7 @@
       "quantity": 2,
       "date_requested": "2024-05-03T10:00:00Z",
       "order": 1,
+      "inventory": 3,
       "date_received": "2024-05-06T00:00:00Z"
     }
   },
@@ -116,6 +125,7 @@
       "quantity": 3,
       "date_requested": "2024-05-04T15:30:00Z",
       "order": 1,
+      "inventory": 3,
       "date_received": "2024-05-06T00:00:00Z"
     }
   },
@@ -128,6 +138,7 @@
       "quantity": 1,
       "date_requested": "2024-04-01T12:00:00Z",
       "order": 1,
+      "inventory": 2,
       "date_received": null
     }
   },
@@ -140,6 +151,7 @@
       "quantity": 2,
       "date_requested": "2024-04-10T10:30:00Z",
       "order": 1,
+      "inventory": 1,
       "date_received": null
     }
   },
@@ -152,6 +164,7 @@
       "quantity": 3,
       "date_requested": "2024-04-15T09:00:00Z",
       "order": null,
+      "inventory": 1,
       "date_received": null
     }
   },
@@ -164,6 +177,7 @@
       "quantity": 1,
       "date_requested": "2024-04-20T14:30:00Z",
       "order": null,
+      "inventory": 3,
       "date_received": null
     }
   },
@@ -176,6 +190,7 @@
       "quantity": 2,
       "date_requested": "2024-04-25T11:00:00Z",
       "order": null,
+      "inventory": 2,
       "date_received": null
     }
   },
@@ -188,6 +203,7 @@
       "quantity": 3,
       "date_requested": "2024-04-30T16:00:00Z",
       "order": null,
+      "inventory": 3,
       "date_received": null
     }
   }

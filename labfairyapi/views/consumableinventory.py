@@ -41,6 +41,21 @@ class ConsumableInventoryViewSet(ViewSet):
                 inventory__lab_inventories__lab__researchers=researcher
             )
 
+        # Get optional query params
+        availability = request.query_params.get("status", None)
+        searchName = request.query_params.get("name", None)
+
+        if availability is not None:
+            if availability == "available":
+                inventory_consumables = inventory_consumables.filter(depleted=False)
+            if availability == "depleted":
+                inventory_consumables = inventory_consumables.filter(depleted=True)
+
+        if searchName is not None:
+            inventory_consumables = inventory_consumables.filter(
+                consumable__name__icontains=searchName
+            )
+
         serializer = ConsumableInventoryListSerializer(inventory_consumables, many=True)
 
         return Response(serializer.data, status=status.HTTP_200_OK)

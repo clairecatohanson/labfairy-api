@@ -26,4 +26,7 @@ class SupplyRequest(models.Model):
         blank=True,
         related_name="lineitems",
     )
+    inventory = models.ForeignKey(
+        "Inventory", on_delete=models.CASCADE, related_name="supply_requests"
+    )
     date_received = models.DateTimeField(null=True, blank=True)
