@@ -2,6 +2,7 @@ import json
 from django.http import HttpResponse, HttpResponseNotAllowed
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
+from django.db import IntegrityError
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404
 from rest_framework import status
@@ -48,15 +49,36 @@ def register_user(request):
     # Load the JSON string of the request body into a dict
     req_body = json.loads(request.body.decode())
 
+    if (
+        not req_body["username"]
+        or not req_body["email"]
+        or not req_body["first_name"]
+        or not req_body["last_name"]
+        or not req_body["password"]
+    ):
+        return HttpResponse(
+            {
+                "error": "Missing required fields: username, first_name, last_name, email, and password must be included in the request"
+            },
+            content_type="application/json",
+            status=status.HTTP_400_BAD_REQUEST,
+        )
     # Create a new user by invoking the `create_user` helper method
     # on Django's built-in User model
-    new_user = User.objects.create_user(
-        username=req_body["username"],
-        email=req_body["email"],
-        password=req_body["password"],
-        first_name=req_body["first_name"],
-        last_name=req_body["last_name"],
-    )
+    try:
+        new_user = User.objects.create_user(
+            username=req_body["username"],
+            email=req_body["email"],
+            password=req_body["password"],
+            first_name=req_body["first_name"],
+            last_name=req_body["last_name"],
+        )
+    except IntegrityError as e:
+        return HttpResponse(
+            {"error": e.args[0]},
+            content_type="application/json",
+            status=status.HTTP_409_CONFLICT,
+        )
 
     lab = get_object_or_404(Lab, pk=1)
 
