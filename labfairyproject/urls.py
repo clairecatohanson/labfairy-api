@@ -21,6 +21,7 @@ router.register(
 )
 router.register(r"supplyrequests", SupplyRequestViewSet, "supplyrequests")
 router.register(r"orders", OrderViewSet, "orders")
+router.register(r"researcher", ResearcherViewSet, "researcher")
 
 urlpatterns = [
     path("", include(router.urls)),

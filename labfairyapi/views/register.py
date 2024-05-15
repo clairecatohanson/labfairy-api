@@ -58,7 +58,7 @@ def register_user(request):
         last_name=req_body["last_name"],
     )
 
-    lab = get_object_or_404(Lab, pk=req_body["lab_id"])
+    lab = get_object_or_404(Lab, pk=1)
 
     researcher = Researcher.objects.create(user=new_user, lab=lab)
 
@@ -69,7 +69,14 @@ def register_user(request):
     token = Token.objects.create(user=new_user)
 
     # Return the token to the client
-    data = json.dumps({"token": token.key, "id": new_user.id})
+    data = json.dumps(
+        {
+            "token": token.key,
+            "id": new_user.id,
+            "researcher_id": researcher.id,
+            "valid": True,
+        }
+    )
     return HttpResponse(
         data, content_type="application/json", status=status.HTTP_201_CREATED
     )

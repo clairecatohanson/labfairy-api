@@ -13,3 +13,4 @@ from .inventory import InventoryViewSet
 from .consumableinventory import ConsumableInventoryViewSet
 from .supplyrequest import SupplyRequestViewSet
 from .order import OrderViewSet
+from .researcher import ResearcherViewSet
