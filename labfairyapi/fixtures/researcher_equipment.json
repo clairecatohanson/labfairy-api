@@ -1,0 +1,42 @@
+[
+  {
+    "model": "labfairyapi.researcherequipment",
+    "pk": 1,
+    "fields": {
+      "researcher": 6,
+      "equipment": 11,
+      "training_date": "2024-04-15",
+      "approved": true
+    }
+  },
+  {
+    "model": "labfairyapi.researcherequipment",
+    "pk": 2,
+    "fields": {
+      "researcher": 3,
+      "equipment": 4,
+      "training_date": "2024-02-22",
+      "approved": false
+    }
+  },
+  {
+    "model": "labfairyapi.researcherequipment",
+    "pk": 3,
+    "fields": {
+      "researcher": 3,
+      "equipment": 9,
+      "training_date": "2024-05-10",
+      "approved": false
+    }
+  },
+  {
+    "model": "labfairyapi.researcherequipment",
+    "pk": 4,
+    "fields": {
+      "researcher": 8,
+      "equipment": 14,
+      "training_date": "2024-03-28",
+      "approved": false
+    }
+  }
+]

@@ -1,0 +1,210 @@
+[
+  {
+    "model": "labfairyapi.supplyrequest",
+    "pk": 1,
+    "fields": {
+      "researcher": 1,
+      "consumable": 1,
+      "quantity": 2,
+      "date_requested": "2024-04-01T12:00:00Z",
+      "order": 1,
+      "inventory": 1,
+      "date_received": "2024-05-06T00:00:00Z"
+    }
+  },
+  {
+    "model": "labfairyapi.supplyrequest",
+    "pk": 2,
+    "fields": {
+      "researcher": 2,
+      "consumable": 2,
+      "quantity": 1,
+      "date_requested": "2024-04-10T10:30:00Z",
+      "order": 1,
+      "inventory": 1,
+      "date_received": "2024-05-06T00:00:00Z"
+    }
+  },
+  {
+    "model": "labfairyapi.supplyrequest",
+    "pk": 3,
+    "fields": {
+      "researcher": 3,
+      "consumable": 3,
+      "quantity": 3,
+      "date_requested": "2024-04-15T09:00:00Z",
+      "order": 1,
+      "inventory": 2,
+      "date_received": "2024-05-06T00:00:00Z"
+    }
+  },
+  {
+    "model": "labfairyapi.supplyrequest",
+    "pk": 4,
+    "fields": {
+      "researcher": 4,
+      "consumable": 4,
+      "quantity": 2,
+      "date_requested": "2024-04-20T14:30:00Z",
+      "order": 1,
+      "inventory": 2,
+      "date_received": "2024-05-06T00:00:00Z"
+    }
+  },
+  {
+    "model": "labfairyapi.supplyrequest",
+    "pk": 5,
+    "fields": {
+      "researcher": 5,
+      "consumable": 5,
+      "quantity": 1,
+      "date_requested": "2024-04-25T11:00:00Z",
+      "order": 1,
+      "inventory": 3,
+      "date_received": "2024-05-06T00:00:00Z"
+    }
+  },
+  {
+    "model": "labfairyapi.supplyrequest",
+    "pk": 6,
+    "fields": {
+      "researcher": 6,
+      "consumable": 6,
+      "quantity": 2,
+      "date_requested": "2024-04-30T16:00:00Z",
+      "order": 1,
+      "inventory": 3,
+      "date_received": "2024-05-06T00:00:00Z"
+    }
+  },
+  {
+    "model": "labfairyapi.supplyrequest",
+    "pk": 7,
+    "fields": {
+      "researcher": 7,
+      "consumable": 7,
+      "quantity": 3,
+      "date_requested": "2024-05-01T09:30:00Z",
+      "order": 1,
+      "inventory": 1,
+      "date_received": "2024-05-06T00:00:00Z"
+    }
+  },
+  {
+    "model": "labfairyapi.supplyrequest",
+    "pk": 8,
+    "fields": {
+      "researcher": 8,
+      "consumable": 8,
+      "quantity": 1,
+      "date_requested": "2024-05-02T13:00:00Z",
+      "order": 1,
+      "inventory": 2,
+      "date_received": "2024-05-06T00:00:00Z"
+    }
+  },
+  {
+    "model": "labfairyapi.supplyrequest",
+    "pk": 9,
+    "fields": {
+      "researcher": 9,
+      "consumable": 9,
+      "quantity": 2,
+      "date_requested": "2024-05-03T10:00:00Z",
+      "order": 1,
+      "inventory": 3,
+      "date_received": "2024-05-06T00:00:00Z"
+    }
+  },
+  {
+    "model": "labfairyapi.supplyrequest",
+    "pk": 10,
+    "fields": {
+      "researcher": 10,
+      "consumable": 10,
+      "quantity": 3,
+      "date_requested": "2024-05-04T15:30:00Z",
+      "order": 1,
+      "inventory": 3,
+      "date_received": "2024-05-06T00:00:00Z"
+    }
+  },
+  {
+    "model": "labfairyapi.supplyrequest",
+    "pk": 11,
+    "fields": {
+      "researcher": 1,
+      "consumable": 11,
+      "quantity": 1,
+      "date_requested": "2024-04-01T12:00:00Z",
+      "order": 1,
+      "inventory": 2,
+      "date_received": null
+    }
+  },
+  {
+    "model": "labfairyapi.supplyrequest",
+    "pk": 12,
+    "fields": {
+      "researcher": 2,
+      "consumable": 12,
+      "quantity": 2,
+      "date_requested": "2024-04-10T10:30:00Z",
+      "order": 1,
+      "inventory": 1,
+      "date_received": null
+    }
+  },
+  {
+    "model": "labfairyapi.supplyrequest",
+    "pk": 13,
+    "fields": {
+      "researcher": 3,
+      "consumable": 13,
+      "quantity": 3,
+      "date_requested": "2024-04-15T09:00:00Z",
+      "order": null,
+      "inventory": 1,
+      "date_received": null
+    }
+  },
+  {
+    "model": "labfairyapi.supplyrequest",
+    "pk": 14,
+    "fields": {
+      "researcher": 4,
+      "consumable": 14,
+      "quantity": 1,
+      "date_requested": "2024-04-20T14:30:00Z",
+      "order": null,
+      "inventory": 3,
+      "date_received": null
+    }
+  },
+  {
+    "model": "labfairyapi.supplyrequest",
+    "pk": 15,
+    "fields": {
+      "researcher": 5,
+      "consumable": 15,
+      "quantity": 2,
+      "date_requested": "2024-04-25T11:00:00Z",
+      "order": null,
+      "inventory": 2,
+      "date_received": null
+    }
+  },
+  {
+    "model": "labfairyapi.supplyrequest",
+    "pk": 16,
+    "fields": {
+      "researcher": 6,
+      "consumable": 16,
+      "quantity": 3,
+      "date_requested": "2024-04-30T16:00:00Z",
+      "order": null,
+      "inventory": 3,
+      "date_received": null
+    }
+  }
+]

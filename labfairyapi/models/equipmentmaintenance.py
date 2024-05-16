@@ -17,11 +17,8 @@ class EquipmentMaintenance(models.Model):
     date_scheduled = models.DateField(
         null=True,
         blank=True,
-        validators=[
-            MinValueValidator(timezone.now().date() + datetime.timedelta(days=1))
-        ],
     )
-    date_completed = models.DateTimeField(null=True, blank=True)
+    date_completed = models.DateField(null=True, blank=True)
     notes = models.TextField(null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
 

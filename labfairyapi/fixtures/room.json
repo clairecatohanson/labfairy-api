@@ -78,5 +78,29 @@
       "building": 1,
       "name": "412"
     }
+  },
+  {
+    "model": "labfairyapi.room",
+    "pk": 11,
+    "fields": {
+      "building": 1,
+      "name": "B03"
+    }
+  },
+  {
+    "model": "labfairyapi.room",
+    "pk": 12,
+    "fields": {
+      "building": 1,
+      "name": "350"
+    }
+  },
+  {
+    "model": "labfairyapi.room",
+    "pk": 13,
+    "fields": {
+      "building": 1,
+      "name": "352"
+    }
   }
 ]

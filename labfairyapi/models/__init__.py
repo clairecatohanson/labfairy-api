@@ -7,3 +7,10 @@ from .location import Location
 from .maintenance import Maintenance
 from .researcher import Researcher
 from .room import Room
+from .consumable import Consumable
+from .inventory import Inventory
+from .labinventory import LabInventory
+from .consumableinventory import ConsumableInventory
+from .researcherequipment import ResearcherEquipment
+from .order import Order
+from .supplyrequest import SupplyRequest

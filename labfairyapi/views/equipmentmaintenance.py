@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ValidationError
+from django.db.models import Q
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
@@ -122,7 +123,9 @@ class EquipmentMaintenanceViewSet(ViewSet):
         except ValidationError as e:
             return Response({"error": e.args[0]}, status=status.HTTP_400_BAD_REQUEST)
 
-        return Response({}, status=status.HTTP_204_NO_CONTENT)
+        serializer = EquipmentMaintenanceSerializer(maintenance_ticket, many=False)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def delete(self, request, pk=None):
         # Check that user is_staff
@@ -142,16 +145,19 @@ class EquipmentMaintenanceViewSet(ViewSet):
     def list(self, request):
         # Check if the user is a superuser. If not, get the associated researcher.
         user = request.auth.user
-        if user.is_superuser:
-            maintenance_tickets = EquipmentMaintenance.objects.all()
+        maintenance_tickets = EquipmentMaintenance.objects.all()
 
-        else:
+        if not user.is_superuser:
             researcher = Researcher.objects.get(user=user)
 
-            # Filter EquipmentMaintenance set for equipment that the lab has access to
-            maintenance_tickets = EquipmentMaintenance.objects.filter(
-                equipment__equipment_labs__lab__researchers=researcher
-            )
+            # Filter EquipmentMaintenance set for equipment that the lab or researcher has access to
+            has_lab_access = Q(equipment__equipment_labs__lab__researchers=researcher)
+            has_requested_access = Q(equipment__access_requests__researcher=researcher)
+            has_approved_access = Q(equipment__access_requests__approved=True)
+
+            maintenance_tickets = maintenance_tickets.filter(
+                has_lab_access | (has_requested_access & has_approved_access)
+            ).distinct()
 
         # Get optional query params and filter maintenance_tickets
         equipment_id = request.query_params.get("equipment_id")
@@ -191,16 +197,22 @@ class EquipmentMaintenanceViewSet(ViewSet):
                 maintenance_tickets = maintenance_tickets.filter(
                     date_scheduled__isnull=False, date_completed__isnull=False
                 )
+            if progress == "active":
+                maintenance_tickets = maintenance_tickets.filter(
+                    date_completed__isnull=True
+                )
+
+        maintenance_tickets = maintenance_tickets.order_by("date_needed")
 
         # Limit the number of maintenance tickets in the response
         if limit is not None:
             limit = int(limit)
             if progress == "requested":
-                maintenance_tickets = maintenance_tickets.order_by("-date_needed")[
+                maintenance_tickets = maintenance_tickets.order_by("date_needed")[
                     :limit
                 ]
             if progress == "scheduled":
-                maintenance_tickets = maintenance_tickets.order_by("-date_scheduled")[
+                maintenance_tickets = maintenance_tickets.order_by("date_scheduled")[
                     :limit
                 ]
 
@@ -209,24 +221,15 @@ class EquipmentMaintenanceViewSet(ViewSet):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def retrieve(self, request, pk=None):
-        maintenance_ticket = get_object_or_404(EquipmentMaintenance, pk=pk)
-
-        # Check if the user is a superuser. If not, get the associated researcher.
+        # Check if the user is a superuser.
         user = request.auth.user
         if not user.is_superuser:
-            researcher = Researcher.objects.get(user=user)
+            return Response(
+                {"error": "You are not authorized to perform this action."},
+                status=status.HTTP_403_FORBIDDEN,
+            )
 
-            # Get researcher's equipment_ids
-            lab_equipment_set = researcher.lab.lab_equipment.all()
-            equipment_ids = [
-                lab_equipment.equipment.id for lab_equipment in lab_equipment_set
-            ]
-
-            if maintenance_ticket.equipment.id not in equipment_ids:
-                return Response(
-                    {"error": "You are not authorized to perform this action."},
-                    status=status.HTTP_403_FORBIDDEN,
-                )
+        maintenance_ticket = get_object_or_404(EquipmentMaintenance, pk=pk)
 
         serializer = EquipmentMaintenanceDetailsSerializer(
             maintenance_ticket, many=False

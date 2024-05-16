@@ -14,6 +14,14 @@ router.register(r"rooms", RoomViewSet, "rooms")
 router.register(r"locations", LocationViewSet, "locations")
 router.register(r"labs", LabViewSet, "labs")
 router.register(r"profile", UserViewSet, "profile")
+router.register(r"equipmentrequests", ResearcherEquipmentViewSet, "researcherequipment")
+router.register(r"inventories", InventoryViewSet, "inventories")
+router.register(
+    r"inventoryconsumables", ConsumableInventoryViewSet, "consumableinventories"
+)
+router.register(r"supplyrequests", SupplyRequestViewSet, "supplyrequests")
+router.register(r"orders", OrderViewSet, "orders")
+router.register(r"researcher", ResearcherViewSet, "researcher")
 
 urlpatterns = [
     path("", include(router.urls)),
