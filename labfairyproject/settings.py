@@ -47,6 +47,7 @@ CORS_ORIGIN_WHITELIST = (
     "http://127.0.0.1:3000",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://labfairy-client-xv2uc.ondigitalocean.app",
 )
 
 
