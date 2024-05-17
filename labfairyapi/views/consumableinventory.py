@@ -126,25 +126,26 @@ class ConsumableInventoryViewSet(ViewSet):
         inventory_id = request.data.get("inventory_id", None)
         location_id = request.data.get("location_id", None)
 
-        if not consumable_id or not inventory_id or not location_id:
+        if not consumable_id or not inventory_id:
             return Response(
-                {
-                    "error": "Missing required fields: consumable_id, inventory_id, and/or location_id"
-                },
+                {"error": "Missing required fields: consumable_id, inventory_id"},
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
         consumable = get_object_or_404(Consumable, pk=consumable_id)
         inventory = get_object_or_404(Inventory, pk=inventory_id)
-        location = get_object_or_404(Location, pk=location_id)
+        if location_id is not None:
+            location = get_object_or_404(Location, pk=location_id)
 
         try:
             new_inventory_item = ConsumableInventory.objects.create(
                 consumable=consumable,
                 inventory=inventory,
-                location=location,
                 depleted=False,
             )
+
+            if location_id is not None:
+                new_inventory_item.location = location
             new_inventory_item.save()
         except ValidationError as e:
             return Response({"error": e.args[0]}, status=status.HTTP_400_BAD_REQUEST)
