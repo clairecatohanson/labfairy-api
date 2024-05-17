@@ -19,6 +19,7 @@ from .inventory import InventorySerializer
 from .consumableinventory import (
     ConsumableInventoryListSerializer,
     ConsumableInventoryDetailSerializer,
+    ConsumableInventoryBasicSerializer,
 )
 from .supplyrequest import SupplyRequestSerializer
 from .order import OrderSerializer, OrderDetailSerializer

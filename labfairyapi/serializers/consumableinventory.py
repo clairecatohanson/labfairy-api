@@ -67,3 +67,9 @@ class ConsumableInventoryDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = ConsumableInventory
         fields = "__all__"
+
+
+class ConsumableInventoryBasicSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ConsumableInventory
+        fields = "__all__"
