@@ -1,6 +1,7 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from django.core.exceptions import ValidationError
+from django.db.models.functions import Lower
 from rest_framework import status
 from django.shortcuts import get_object_or_404
 from labfairyapi.models import (
@@ -63,6 +64,10 @@ class ConsumableInventoryViewSet(ViewSet):
             inventory_consumables = inventory_consumables.filter(
                 consumable__name__icontains=searchName
             )
+
+        inventory_consumables = inventory_consumables.order_by(
+            Lower("consumable__name")
+        )
 
         serializer = ConsumableInventoryListSerializer(inventory_consumables, many=True)
 
