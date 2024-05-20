@@ -1,11 +1,20 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
+from django.core.exceptions import ValidationError
+from django.db.models.functions import Lower
 from rest_framework import status
 from django.shortcuts import get_object_or_404
-from labfairyapi.models import Inventory, Consumable, ConsumableInventory, Researcher
+from labfairyapi.models import (
+    Inventory,
+    Consumable,
+    ConsumableInventory,
+    Researcher,
+    Location,
+)
 from labfairyapi.serializers import (
     ConsumableInventoryListSerializer,
     ConsumableInventoryDetailSerializer,
+    ConsumableInventoryBasicSerializer,
 )
 
 
@@ -55,6 +64,10 @@ class ConsumableInventoryViewSet(ViewSet):
             inventory_consumables = inventory_consumables.filter(
                 consumable__name__icontains=searchName
             )
+
+        inventory_consumables = inventory_consumables.order_by(
+            Lower("consumable__name")
+        )
 
         serializer = ConsumableInventoryListSerializer(inventory_consumables, many=True)
 
@@ -111,3 +124,37 @@ class ConsumableInventoryViewSet(ViewSet):
         item.save()
 
         return Response({}, status=status.HTTP_204_NO_CONTENT)
+
+    def create(self, request):
+        # Get keys from request body
+        consumable_id = request.data.get("consumable_id", None)
+        inventory_id = request.data.get("inventory_id", None)
+        location_id = request.data.get("location_id", None)
+
+        if not consumable_id or not inventory_id:
+            return Response(
+                {"error": "Missing required fields: consumable_id, inventory_id"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        consumable = get_object_or_404(Consumable, pk=consumable_id)
+        inventory = get_object_or_404(Inventory, pk=inventory_id)
+        if location_id is not None:
+            location = get_object_or_404(Location, pk=location_id)
+
+        try:
+            new_inventory_item = ConsumableInventory.objects.create(
+                consumable=consumable,
+                inventory=inventory,
+                depleted=False,
+            )
+
+            if location_id is not None:
+                new_inventory_item.location = location
+            new_inventory_item.save()
+        except ValidationError as e:
+            return Response({"error": e.args[0]}, status=status.HTTP_400_BAD_REQUEST)
+
+        serializer = ConsumableInventoryBasicSerializer(new_inventory_item, many=False)
+
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
